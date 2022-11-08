@@ -11,7 +11,7 @@ import padlock from "../../Assets/Login/padlock1.png";
 function Login() {
   return (
     <div className=''>
-      <div className='container'>
+      <div className="container center">
         <Row className='pt-5'>
           <Col>
           <img src={logo} width={450} height={180}></img>
