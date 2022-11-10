@@ -40,11 +40,6 @@ const Navbar = (props) => {
       iconClassName: chart,
     },
     {
-      name: "CHART",
-      exact: true,
-      to: "/dashboard",
-      iconClassName: chart,
-    },{
       name: "MODAL",
       exact: true,
       to: "/dashboard",
@@ -59,12 +54,12 @@ const Navbar = (props) => {
     {
       name: "FORM",
       exact: true,
-      to: "/dashboard",
+      to: "/form",
       iconClassName: form,
     },{
       name: "FILE UPLOAD",
       exact: true,
-      to: "/dashboard",
+      to: "/file-upload",
       iconClassName: fileupload,
     },
     // {

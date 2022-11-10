@@ -22,7 +22,7 @@ function Form() {
         <div className={`page-container ${inactive ? "inactive" : "active"}`}>
         {/* First Row */}
             <Row>
-                <h1 className='page-title-edit left'>DASHBOARD</h1>
+                <h1 className='page-title-edit left'>FORM</h1>
             </Row>
             <hr className='hr-line'/>
             <Row>
