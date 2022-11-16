@@ -3,6 +3,9 @@ import { Row, Col } from 'react-bootstrap';
 
 //CSS
 import '../Forms/Form.css';
+import '../../Pages/Dashboard/Dahsboard.css';
+//Images
+import Search from "../../Assets/Dashboard/search.png";
 
 //Component
 import Navbar from "../../Components/Navbar/Navbar";
@@ -22,57 +25,29 @@ function Form() {
         <div className={`page-container ${inactive ? "inactive" : "active"}`}>
         {/* First Row */}
             <Row>
-                <h1 className='page-title-edit left'>DASHBOARD</h1>
+                <Col>
+                    <h1 className='page-title-edit left'>DASHBOARD</h1>
+                </Col>
+                <div className='branch-wrapper'>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                placeholder='Search loyalty type' 
+                                className='branch-input'
+                                // onChange={(e) => handleFilterChange(e)}
+                        
+                            />
+                            <div className="branch-icon">
+                                <img className="search-icon left" src={Search}></img>
+                            </div>
+                        </div>
+                <Col>
+                    <input type="text" className='search-input-text search-img'  placeholder="Search"></input>
+                    {/* <img className="search-icon" src={Search}></img> */}
+                </Col>
             </Row>
             <hr className='hr-line'/>
-            <Row>
-                <Col xs='2' className='left'>
-                    <label className='forms-text'>Role: </label>
-                </Col>
-                <Col xs='5' className='left'>
-                    <select className='form-dropdown'>
-                        <option>Select</option>
-                        <option>All</option>
-                    </select>
-                </Col>
-            </Row>
-            <Row>
-                <Col xs='2' className='left'>
-                    <label className='forms-text'>First Name: </label>
-                </Col>
-                <Col xs='5' className='left'>
-                    <input type="text" className='form-input-text'></input>
-                </Col>
-            </Row>
-            <Row>
-                <Col xs='2' className='left'>
-                    <label className='forms-text'>Last Name: </label>
-                </Col>
-                <Col xs='5' className='left'>
-                    <input type="text" className='form-input-text'></input>
-                </Col>
-            </Row>
-            <Row>
-                <Col xs='2' className='left'>
-                    <label className='forms-text'>BirthDate: </label>
-                </Col>
-                <Col xs='5' className='left'>
-                    <input type="text" className='form-input-text'></input>
-                </Col>
-            </Row>
-            <Row>
-                <Col xs='2' className='left'>
-                    <label className='forms-text'>Address: </label>
-                </Col>
-                <Col xs='5' className='left'>
-                    <input type="text" className='form-input-text'></input>
-                </Col>
-            </Row>
-            <Row>
-                <Col className='right'>
-                    <button className='save-btn'>SAVE</button>
-                </Col>
-            </Row>
+           
         </div>
     </div>
   )
