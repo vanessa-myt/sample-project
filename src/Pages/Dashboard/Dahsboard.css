@@ -1,28 +1,84 @@
 .search-input-text{
-    box-sizing: border-box;
-    width: 300px;
-    height: 40px;
-    margin-top: 20px;
-    background: #cef2f6;
-    border: 1px solid #9b9ba0;
-    /* box-shadow: 0px 4px 4px #cef2f6; */
+    background: #d9f3f6;
+    border: 1px solid #a6ddf9;
     border-radius: 5px;
+    box-sizing: border-box;
+    width: 50%;
+    margin-top: 2%;
+    padding: 5px;
+    padding-left: 5%;
+    z-index: 0;
 }
+
+.page-title{
+    font-family: 'Gotham-Rounded-Bold';
+    color: #3fd3ea;
+    letter-spacing: 0.05em;
+    font-size: 3.0rem;
+  }
 
 .branch-icon {
     display: inline;
-    width: 5%;
-    margin-left: -10%;
+    width: 2%;
+    margin-left: -5%;
     color: #e70689;
     cursor: pointer;
   }
 
 .search-icon{
-    /* padding-left: 25px;
-    background: url("../../Assets/Dashboard/search.png") no-repeat left;
-    background-size: 20px; */
     width: 25px;
     height: 25px;
-    left: 5vw;
-    top: 552px;
+    left: 10vw;
 }
+
+.history-cont{
+    background: #d9f3f6;
+    border: 1px solid #a6ddf9;
+    border-radius: 5px;
+    width: 100% !important;
+    height: 9vw;
+    background-color: #adebf5;
+    padding-top: 2%;
+}
+
+.dashboard-icons{
+    width: 90px;
+    height: 90px;
+    margin-left: 30px;
+}
+
+@media screen and (min-width: 450px) {
+.subtitle {
+    font-family: 'Gotham-Rounded-Bold';
+    color: #255398;
+    letter-spacing: 0.05em;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+.text-label {
+    font-family: 'Gotham-Rounded-Bold';
+    color: #3e6db5;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+}
+
+@media screen and (max-width: 600px) {
+    .subtitle {
+        font-family: 'Gotham-Rounded-Bold';
+        color: #255398;
+        letter-spacing: 0.05em;
+        font-size: 5px;
+        text-transform: uppercase;
+      }
+    
+    .text-label {
+        font-family: 'Gotham-Rounded-Bold';
+        color: #3e6db5;
+        letter-spacing: 0.05em;
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+  }
