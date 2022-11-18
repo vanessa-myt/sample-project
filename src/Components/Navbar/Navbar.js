@@ -42,13 +42,13 @@ const Navbar = (props) => {
     {
       name: "MODAL",
       exact: true,
-      to: "/dashboard",
+      to: "/modal",
       iconClassName: modal,
     },
     {
       name: "REPORT",
       exact: true,
-      to: "/dashboard",
+      to: "/report",
       iconClassName: report,
     },
     {

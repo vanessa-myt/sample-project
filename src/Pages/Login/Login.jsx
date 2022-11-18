@@ -1,14 +1,25 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Row, Col } from 'react-bootstrap';
-
+import { Navigate, useNavigate } from 'react-router-dom';
 import "./Login.css";
 
 //IMG
 import logo from "../../Assets/Login/myt_logo.png";
 import username from "../../Assets/Login/username.png";
-import padlock from "../../Assets/Login/padlock1.png";
+import padlock from "../../Assets/Login/padlock1.png"; 
 
 function Login() {
+
+  const navigateto = useNavigate()
+  const [redirect, setRedirect] = useState()
+
+  useEffect(() => {
+    if(redirect === "navigate") 
+      {
+        navigateto("/dashboard")
+      }
+  }, [redirect]); 
+
   return (
     <div className=''>
       <div className="container center">
@@ -43,7 +54,7 @@ function Login() {
         </Row>
         <Row className='center'>
           <Col xs='3'>
-            <button className='login-btn'>LOGIN</button>
+            <button className='login-btn' onClick={ () => setRedirect("navigate")}>LOGIN</button>
           </Col>
         </Row>
       </div>

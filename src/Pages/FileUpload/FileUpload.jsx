@@ -18,7 +18,6 @@ function Form() {
     const [showModal, setShowModal] = useState(false);
     const [selected, setSelected] = useState(false);
 
-  const fileReader = new FileReader();
 
   const handleOnChange = (e) => {
     setFile(e.target.files[0]);
@@ -26,10 +25,15 @@ function Form() {
     setShowModal(true);
   };
 
+//initialize file reader
+  const fileReader = new FileReader();
+//function to convert csv file to array
   const csvFileToArray = (string) => {
+    //for header
     const csvHeader = string.slice(0, string.indexOf("\n")).split(",");
+    //for row
     const csvRows = string.slice(string.indexOf("\n") + 1).split("\n");
-
+    
     const array = csvRows.map((i) => {
       const values = i.split(",");
       const obj = csvHeader.reduce((object, header, index) => {
@@ -52,6 +56,7 @@ function Form() {
 
   console.log(array);
 
+  //handle onClick to submit
   const handleOnSubmit = (e) => {
     e.preventDefault();
     if (file) {
@@ -59,7 +64,6 @@ function Form() {
         const text = event.target.result;
         csvFileToArray(text);
       };
-
       fileReader.readAsText(file);
       alert.success("CONVERTED");
     }
@@ -102,7 +106,7 @@ function Form() {
             onCollapse={(inactive) => {
             setInactive(inactive)
             }}
-            active={'MANAGE'} 
+            active={'FILE UPLOAD'} 
         />
         <div className={`page-container ${inactive ? "inactive" : "active"}`}>
         {/* First Row */}
