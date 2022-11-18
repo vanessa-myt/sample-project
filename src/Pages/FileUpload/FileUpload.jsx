@@ -10,6 +10,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 function Form() {
 
     const [inactive, setInactive] = useState(false);
+    const inputRef = React.useRef(null);
 
 //FileUpload Function
     const [file, setFile] = useState();
@@ -17,7 +18,6 @@ function Form() {
     const [showModal, setShowModal] = useState(false);
     const [selected, setSelected] = useState(false);
 
-  const fileReader = new FileReader();
 
   const handleOnChange = (e) => {
     setFile(e.target.files[0]);
@@ -25,10 +25,15 @@ function Form() {
     setShowModal(true);
   };
 
+//initialize file reader
+  const fileReader = new FileReader();
+//function to convert csv file to array
   const csvFileToArray = (string) => {
+    //for header
     const csvHeader = string.slice(0, string.indexOf("\n")).split(",");
+    //for row
     const csvRows = string.slice(string.indexOf("\n") + 1).split("\n");
-
+    
     const array = csvRows.map((i) => {
       const values = i.split(",");
       const obj = csvHeader.reduce((object, header, index) => {
@@ -51,6 +56,7 @@ function Form() {
 
   console.log(array);
 
+  //handle onClick to submit
   const handleOnSubmit = (e) => {
     e.preventDefault();
     if (file) {
@@ -58,11 +64,41 @@ function Form() {
         const text = event.target.result;
         csvFileToArray(text);
       };
-
       fileReader.readAsText(file);
       alert.success("CONVERTED");
     }
   };
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+  const [fileLength, setFileLength] = useState(0)
+  const [fileName, setFileName] = useState("")
+
+   // Convert file to base 64
+   function convertToBase64(e){
+    //read file
+    // var selectedFile=document.getElementById("pdftobase64").files
+    var selectedFile = e.target.files;
+    // Check if file is empty
+    if(selectedFile.length > 0){
+      setFileLength(selectedFile.length)
+      // select first file from list
+      setFileName(selectedFile[0].name)
+      var fileToLoad = selectedFile[0]
+      //Read the file into base64
+      var fileReader = new FileReader();
+      var base64;
+      fileReader.onload = function(fileLoadedEvent){
+        base64 = fileLoadedEvent.target.result;
+        setFile(base64)
+        console.log(fileReader.result);
+
+      }
+      fileReader.readAsDataURL(fileToLoad)
+      console.log(fileToLoad)
+    }
+    console.log(selectedFile)
+  }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   return (
     <div className='page'>
@@ -70,28 +106,69 @@ function Form() {
             onCollapse={(inactive) => {
             setInactive(inactive)
             }}
-            active={'MANAGE'} 
+            active={'FILE UPLOAD'} 
         />
         <div className={`page-container ${inactive ? "inactive" : "active"}`}>
         {/* First Row */}
             <Row>
-                <h1 className='page-title-edit left'>FILE UPLOAD</h1>
+                <h1 className='page-title left'>FILE UPLOAD</h1>
             </Row>
             <hr className='hr-line'/>
             <Row>
-                <Col xs='5' className='left'>
-                    <input type="file" 
-                        className='form-input-upload' 
-                        id={"csvFileInput"}
-                      accept={".csv"}
-                      onChange={handleOnChange}></input>
+              <label className='text-label left mb-4'>Convert to base64</label>
+                <Col xs='5' className='left'> 
+                    <input 
+                      ref={inputRef} 
+                      type="file"                
+                      id="pdftobase64"
+                      name="pdftobase64" 
+                      accept="application/pdf"
+                      className="input-file-upload"
+                      onChange={(e)=>convertToBase64(e)}
+                    />
                 </Col>
-                <Col xs='2' className='left'>
+                <Col xs='2 mb-4' className='left'>
                     <button className='add-btn'>UPLOAD</button>
                 </Col>
             </Row>
             <Row>
-            {/* {fileData()} */}
+              <hr className='hr-line'/>
+            <Row>
+              <label className='text-label left mb-4'>Convert to array and show data</label>
+                <Col xs='5' className='left'>
+                  <input
+                    type={"file"}
+                    id={"csvFileInput"}
+                    accept={".csv"}
+                    onChange={handleOnChange}
+                    ref={inputRef}
+                  />
+                </Col>
+                <Col xs='2' className='left mb-5'>
+                    <button className='add-btn' onClick={handleOnSubmit}>UPLOAD</button>
+                </Col>
+                <Row>
+                <table>
+                    {/* <thead>
+                      <tr key={"header"}>
+                        {header.map((key) => (
+                          <th>{key}</th>
+                        ))}
+                      </tr>
+                    </thead>*/}
+                    <tbody> 
+                      {array.map((item) => (
+                        <tr key={item.id}>
+                          {Object.values(item).map((val) => (
+                            <td>{val}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </Row>
+            </Row>
+            <hr className='hr-line'/>
             </Row>
         </div>
     </div>

@@ -10,7 +10,7 @@ import User from "../../Assets/Dashboard/user.png";
 //Component
 import Navbar from "../../Components/Navbar/Navbar";
 
-function Form() {
+function Dashboard() {
 
     const [inactive, setInactive] = useState(false);
 
@@ -127,4 +127,4 @@ function Form() {
   )
 }
 
-export default Form;
+export default Dashboard;
