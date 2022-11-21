@@ -229,7 +229,7 @@
 //                     align="center"
 //                     onClick={() => handleClick(row.id, row.status, row.user)}
 //                   >
-//                     {row.role}
+//                     {/* {row.role} */}
 //                 </td>
 //                 <td
 //                     key={row.index}
@@ -238,7 +238,7 @@
 //                     align="center"
 //                     onClick={() => handleClick(row.id, row.status, row.user)}
 //                   >
-//                     {row.first_name + "  " + row.last_name}
+//                     {/* {row.first_name + "  " + row.last_name} */}
 //                 </td>
 //                 <td
 //                     key={row.index}
@@ -247,16 +247,17 @@
 //                     align="center"
 //                     onClick={() => handleClick(row.id, row.status, row.user)}
 //                   >
-//                     {row.username}
+//                     {/* {row.username} */}
 //                 </td>
-//                 <td className={" text-left"} data-heading={"ACTION"} align="center" >
+//                 <td className={"text-center"} data-heading={"ACTION"} align="center" >
 //                   <select
-//                     className="form-control input-subtitle table-dropdown action-btn"
+//                     className="form-control input-subtitle table-dropdown text-center action-btn"
 //                     name="employment"
+//                     align = "text-center        "
 //                     id={row.id}
 //                     onChange={onSelectChange}
 //                     >
-//                     <option value="action-btn form-control input-subtitle table-dropdown">Select</option>
+//                     <option>Select</option>
 //                     <option value="update">UPDATE</option>
 //                     <option value="delete">DELETE</option>
 //                     </select>

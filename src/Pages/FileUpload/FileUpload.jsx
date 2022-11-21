@@ -98,6 +98,37 @@ function Form() {
     console.log(selectedFile)
   }
 
+  //convert image to base64
+  const [fileLengths, setFileLengths] = useState(0)
+  const [fileNames, setFileNames] = useState("")
+
+   // Convert file to base 64
+   function convertImageToBase64(e){
+    //read file
+    // var selectedFile=document.getElementById("pdftobase64").files
+    var selectedFile = e.target.files;
+    // Check if file is empty
+    if(selectedFile.length > 0){
+      setFileLengths(selectedFile.length)
+      // select first file from list
+      setFileNames(selectedFile[0].name)
+      var fileToLoad = selectedFile[0]
+      //Read the file into base64
+      var fileReader = new FileReader();
+      var base64;
+      fileReader.onload = function(fileLoadedEvent){
+        base64 = fileLoadedEvent.target.result;
+        setFile(base64)
+        console.log(fileReader.result);
+
+      }
+      fileReader.readAsDataURL(fileToLoad)
+      console.log(fileToLoad)
+    }
+    console.log(selectedFile)
+  }
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   return (
@@ -115,7 +146,7 @@ function Form() {
             </Row>
             <hr className='hr-line'/>
             <Row>
-              <label className='text-label left mb-4'>Convert to base64</label>
+              <label className='text-label left mb-4'>Convert to base64 pdf type</label>
                 <Col xs='5' className='left'> 
                     <input 
                       ref={inputRef} 
@@ -169,6 +200,28 @@ function Form() {
                 </Row>
             </Row>
             <hr className='hr-line'/>
+            <Row>
+              <label className='text-label left mb-4'>Convert to base64 Image type</label>
+                <Col xs='5' className='left'> 
+                    <input 
+                      ref={inputRef} 
+                      type="file"                
+                      id="pdftobase64"
+                      name="pdftobase64" 
+                      accept="application/img"
+                      className="input-file-upload"
+                      onChange={(e)=>convertImageToBase64(e)}
+                    />
+                </Col>
+                <Col xs='2 mb-4' className='left'>
+                    <button className='add-btn'>UPLOAD</button>
+                </Col>
+                <Row>
+                  <Col xs='center'>
+                    <img src={file} className="upload-image-icon"/>
+                  </Col>
+                </Row>
+            </Row>
             </Row>
         </div>
     </div>

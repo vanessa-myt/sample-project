@@ -13,13 +13,13 @@
   border: none;
   width: 25% !important;
   border: 1px solid var(--secondary-color);
-  background: #C30574;
+  background: #5b98b5;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.1);
   color: var(--secondary-color);
 }
 
 .table-dropdown {
-  background-color: #f83aa9 !important;
+  background-color: #5b98b5 !important;
   color: #fdfbfa !important;
 }
 
@@ -29,7 +29,7 @@ $primary-color: #000;
 $light-color: #fff;
 $border-color: #ddd;
 $header-bg-color: #F4F4F4;;
-$header-text-color: #C30574;
+$header-text-color: #5b98b5;
 $ff-primary: 'Poppins', sans-serif;
 
 @mixin break {
@@ -142,7 +142,7 @@ body {
     }
 
     tr:hover td {
-      background-color: #FFE0F2 !important;
+      background-color: #d6f0fd !important;
     }
 
     .first-index {
@@ -151,12 +151,12 @@ body {
 
     .total-label {
       font-family: 'Gotham-Rounded-Medium';
-      color: #C30574;
+      color: #5b98b5;
       float:right;
     }
 
     .value {
-      color: #C30574;
+      color: #5b98b5;
     }
     
     .type-navigation-btn {
@@ -166,7 +166,7 @@ body {
       box-sizing: border-box;
       border-radius: 5px;
       padding: 1%;
-      color: #C30574;
+      color: #5b98b5;
       font-weight: bold;
     }
 
@@ -183,7 +183,7 @@ body {
     }
 
     .nav-icon {
-      color: #C30574;
+      color: #5b98b5;
     }
 
     &--break-lg {
@@ -270,7 +270,7 @@ body {
 
 .action-btn {
   background: transparent;
-  border: 1px solid #55073A;
+  border: 1px solid #5b98b5;
   box-sizing: border-box;
   border-radius: 6px;
   font-size: 9px;
@@ -306,6 +306,10 @@ body {
 
 .text-left {
   text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
 }
 
 .check-icon {

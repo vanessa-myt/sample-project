@@ -10,6 +10,19 @@
     z-index: 0;
 }
 
+.date-input-text{
+  background: #d9f3f6;
+  border: 1px solid #a6ddf9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 40%;
+  margin-top: 2%;
+  margin-right: 2%;
+  padding: 5px;
+  padding-left: 5%;
+  z-index: 0;
+}
+
 .page-title{
     font-family: 'Gotham-Rounded-Bold';
     color: #3fd3ea;
