@@ -54,3 +54,13 @@
     padding: 10px 20px 10px 20px;
     margin-top: 20px;
 }
+
+.date-search-area{
+    caret-color: #5BC9E2;
+    color: rgb(40, 243, 236);
+    border-radius: 5px;
+}
+
+.checkbox{
+    background-color: #5BC9E2;
+}

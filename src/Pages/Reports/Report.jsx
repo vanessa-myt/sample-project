@@ -59,7 +59,7 @@ function Report() {
             <Row>
 
             </Row>
-            <Row>
+            {/* <Row>
                 <Table
                     type={"manager"}
                     tableData={dummyData}
@@ -76,7 +76,7 @@ function Report() {
                     // isReady={isReady}
                     // onSelectChange={handleSelectChange}
                 />
-            </Row>
+            </Row> */}
         </div>
     </div>
   )
