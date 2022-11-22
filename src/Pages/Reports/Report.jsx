@@ -14,6 +14,14 @@ function Report() {
 
     const [inactive, setInactive] = useState(false);
 
+    const dummyData = [ 
+        {
+            role: 'Boang',
+            name: "Novel Palconit",
+            username: "novelpalconit14@gmail.com"
+        }
+    ]
+
   return (
     <div className='page'>
         <Navbar
@@ -49,9 +57,12 @@ function Report() {
             </Row>
             <hr className='hr-line'/>
             <Row>
-                {/* <Table
+
+            </Row>
+            {/* <Row>
+                <Table
                     type={"manager"}
-                    // tableData={user}
+                    tableData={dummyData}
                     clickable={true}
                     headingColumns={[
                         "ROLE",
@@ -64,8 +75,8 @@ function Report() {
                     // useLoader={true}
                     // isReady={isReady}
                     // onSelectChange={handleSelectChange}
-                /> */}
-            </Row>
+                />
+            </Row> */}
         </div>
     </div>
   )
