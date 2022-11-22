@@ -6,6 +6,7 @@ import '../Forms/Form.css';
 
 //Component
 import Navbar from "../../Components/Navbar/Navbar";
+import TextField from '../../Components/Forms/TextField';
 
 function Form() {
 
@@ -68,6 +69,13 @@ function Form() {
                     <input type="text" className='form-input-text'></input>
                 </Col>
             </Row>
+           
+                <TextField 
+                required={true}
+                size={'sm'}
+                formLabel={'Custom Textfield'}
+                placeholder={'Test from core'}/>
+           
             <Row>
                 <Col className='right'>
                     <button className='save-btn'>SAVE</button>
