@@ -7,27 +7,21 @@ import Form from './Pages/Forms/Form';
 import FileUpload from './Pages/FileUpload/FileUpload'; 
 import Report from './Pages/Reports/Report';
 import Modal from './Pages/Modal/Modal';
+import Loaders from './Pages/Others/Loaders';
 function App() {
   return (
     <div className="App">
-     <Router>
+      <Router>
         <Routes>
-          <Route path="/" element={<Login/>}/>
-        </Routes>
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard/>}/>
-        </Routes>
-        <Routes>
-          <Route path="/form" element={<Form/>}/>
-        </Routes>
-        <Routes>
-          <Route path="/file-upload" element={<FileUpload/>}/>
-        </Routes>
-        <Routes>
-          <Route path="/report" element={<Report/>}/>
-        </Routes>
-        <Routes>
+          <Route path="/" element={<Login/>}/>        
+          <Route path="/dashboard" element={<Dashboard/>}/>        
+          <Route path="/form" element={<Form/>}/>        
+          <Route path="/file-upload" element={<FileUpload/>}/>        
+          <Route path="/report" element={<Report/>}/>        
           <Route path="/modal" element={<Modal/>}/>
+
+          {/* OTHERS */}
+          <Route path="/others/loaders" element={<Loaders/>}/>      
         </Routes>
       </Router>
     </div>
