@@ -1,0 +1,9 @@
+.react-loader{
+    display: flex;
+    align-items: center;
+}
+
+.card-header{
+    background: aquamarine;
+    font-family: var(--font-semibold);
+}
