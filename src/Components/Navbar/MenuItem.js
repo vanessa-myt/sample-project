@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Col, Row } from "react-bootstrap";
 
 /**
  * @author
@@ -8,8 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
  **/
 
 const MenuItem = (props) => {
-  const { name, subMenus, iconClassName, onClick, to, exact } = props;
-  const [expandManage, setExpandManage] = useState(false);
+  const { name, subMenus, iconClassName, onClick, to, exact, expandManage, setExpandManage, index } = props;
+
 
     // carets for dropdown
   function caretDown() {
@@ -19,12 +20,13 @@ const MenuItem = (props) => {
   function caretUp() {
     return ( <FontAwesomeIcon icon={"chevron-up"} alt={"caret-up"} aria-hidden="true" className="caret-icon align-self-center"/>)
   }
-  
+
+
 
   if(subMenus.length !== 0) {
     return (
-      <li className="menu-li" onClick={() => {props.onClick(); setExpandManage(!expandManage)}} title={name}>
-          <div className="menu-item">
+      <li className={"menu-li"} onClick={() => {props.onClick(); setExpandManage(index)}} title={name}>
+          <div className={props.activeSub === true ? "menu-item li-active" : "menu-item"}>
             <div className="menu-icon">
               <img src={iconClassName} className="icon"/>
             </div>
@@ -53,10 +55,16 @@ const MenuItem = (props) => {
           to={to}
           className={`menu-item`}
         >
-          <div className="menu-icon">
-            <img src={iconClassName} className="icon"/>
-          </div>
-          <span className="nav-name">{name}</span>
+          <Row>
+            <Col>
+              <div className="menu-icon pl-5" style={{alignContent:"right"}}>
+              <img src={iconClassName} className="icon"/>
+              </div>
+            </Col>
+            <Col>
+            <span className="nav-name p-1" style={{textAlign:"left"}}>{name}</span>
+            </Col>
+          </Row>
         </Link>
       </li>
     );

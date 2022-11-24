@@ -3,6 +3,7 @@
   --primary-color: #61dafb;
   --secondary-color: #5BC9E2;
   --tertiary-color: #3E3E40;
+  --navbar-color:#F3FDFF;
 
 
   --font-regular: 'Poppins-Regular';
@@ -20,6 +21,7 @@ hr{
 .App {
   text-align: center;
   font-family: var(--font-regular);
+  color:var(--tertiary-color)
 }
 
 .header-label{
@@ -30,10 +32,6 @@ hr{
   color:var(--tertiary-color);
   padding: 2%;
   padding-bottom: 0%;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 .badge{
