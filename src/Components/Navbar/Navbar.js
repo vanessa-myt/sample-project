@@ -1,81 +1,64 @@
 import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { removeUserSession } from "../../Helpers/Utils/Common";
-// import { getName, getType, getRole } from "../../Helpers/Utils/Common";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuItem from "./MenuItem";
 
 //css
-import '../Navbar/Navbar.css';
+import "../Navbar/Navbar.css";
 
 //icons
-import dashboard from "../../Assets/Navbar/dashboard.png";
-import gmap from "../../Assets/Navbar/gmaps.png";
-import chart from "../../Assets/Navbar/chart.png";
-import modal from "../../Assets/Navbar/modals.png";
-import report from "../../Assets/Navbar/report.png";
-import form from "../../Assets/Navbar/forms.png";
-import fileupload from "../../Assets/Navbar/fileupload.png";
 import logo from "../../Assets/Logo/MYT_nobg.png";
 import logout from "../../Assets/Navbar/logout.png";
+import dashboard from "../../Assets/Navbar/dashboard.png";
 
 const Navbar = (props) => {
 
-  const agentItems = [
+  //BU Head
+  const buHeadItems = [
     {
       name: "DASHBOARD",
       exact: true,
       to: "/dashboard",
       iconClassName: dashboard,
     },
-    {
-      name: "GOOGLE MAPS",
-      exact: true,
-      to: "/",
-      iconClassName: gmap,
-    },
-    {
-      name: "CHART",
-      exact: true,
-      to: "/dashboard",
-      iconClassName: chart,
-    },
-    {
-      name: "MODAL",
-      exact: true,
-      to: "/modal",
-      iconClassName: modal,
-    },
-    {
-      name: "REPORT",
-      exact: true,
-      to: "/report",
-      iconClassName: report,
-    },
-    {
-      name: "FORM",
-      exact: true,
-      to: "/form",
-      iconClassName: form,
-    },{
-      name: "FILE UPLOAD",
-      exact: true,
-      to: "/file-upload",
-      iconClassName: fileupload,
-    },
     // {
     //   name: "FEDEX",
     //   exact: true,
     //   to: "/",
-    //   iconClassName: deliverytruck,
+    //   iconClassName: fedex,
     //   subMenus: [
-    //     {name: "PRE-ENCODED TRANSACTION", to: "/data-retrieval"},
+    //     { name: "Adjustments", to: "/adjustments" },
+    //     { name: "Announcements", to: "/announcements" },
+    //     { name: "Outlets", to: "/Otheroutlets/fedex" },
+    //     { name: "Customers", to: "/customers" },
+    //     { name: "Discounts", to: "/discounts" },
+    //     { name: "Package Type", to: "/packagetype" },
+    //     { name: "Ship Services", to: "/shipservices" },
+    //     { name: "Surcharges", to: "/surcharges" },
     //   ],
+    //   expand: true,
     // },
-  ]
+    
+  ];
 
   const [inactive, setInactive] = useState(true);
   const [menuItems, setMenuItems] = useState([]);
+  const [expandManage, setExpandManage] = useState(true);
 
+  const handleExpand = (index) => {
+    var list = [...menuItems];
+
+    if (!inactive) {
+      for (var i = 0; i < list.length; i++) {
+        if (i !== index) {
+          list[i]["expand"] = true;
+        }
+      }
+
+      list[index]["expand"] = !list[index]["expand"];
+
+      setMenuItems(list);
+    }
+  };
 
   useEffect(() => {
     if (inactive) {
@@ -92,15 +75,11 @@ const Navbar = (props) => {
   };
 
   useEffect(() => {
-    //Determine user role
+    setMenuItems(buHeadItems);
 
-    // const role = getRole();
-    setMenuItems(agentItems);
-
-    
     let menuItemsList = document.querySelectorAll(".menu-item");
     menuItemsList.forEach((el, index) => {
-      if(menuItems[index].name == props.active) {
+      if (menuItems[index].name == props.active) {
         el.classList.add("active");
       }
       el.addEventListener("click", (e) => {
@@ -115,64 +94,70 @@ const Navbar = (props) => {
     });
   }, []);
 
-
   return (
     <div className={`side-menu ${inactive ? "inactive" : ""}`}>
       <div className="top-section">
-        <div className="logo d-flex justify-content-center logo-mb">
-            <img src={logo} className="navbar-logo" onClick={() => setInactive(!inactive)} />
+        <div className="logo d-flex justify-content-center">
+          <img
+            src={logo}
+            className="navbar-logo"
+            onClick={() => setInactive(!inactive)}
+          />
         </div>
         <div onClick={() => setInactive(!inactive)} className="toggle-menu-btn">
           {inactive ? (
-              <div className="max-menu-cont">
-             <FontAwesomeIcon
-             icon={'angle-double-right'}
-             alt={'open'}
-             className={'max-menu'}
-             aria-hidden="true"
-         /></div>
+            <div className="max-menu-cont">
+              <FontAwesomeIcon
+                icon={"angle-double-right"}
+                alt={"open"}
+                className={"max-menu"}
+                aria-hidden="true"
+              />
+            </div>
           ) : (
             <FontAwesomeIcon
-            icon={'angle-double-left'}
-            alt={'close'}
-            className={'min-menu'}
-            aria-hidden="true"
-        />
+              icon={"angle-double-left"}
+              alt={"close"}
+              className={"min-menu"}
+              aria-hidden="true"
+            />
           )}
         </div>
       </div>
-      <div>
-        <p>Banban Batumbakal</p>
+
+      <div className={inactive ? "main-menu" : "main-menu active-menu"}>
+        {menuItems.map((menuItem, index) => (
+          <MenuItem
+            key={index}
+            name={menuItem.name}
+            exact={menuItem.exact.toString()}
+            to={menuItem.to}
+            subMenus={menuItem.subMenus || []}
+            iconClassName={menuItem.iconClassName}
+            expandManage={menuItem.expand}
+            setExpandManage={handleExpand}
+            index={index}
+            activeSub={menuItem.name === props.active}
+            onClick={(e) => {
+              if (inactive) {
+                setInactive(false);
+              }
+            }}
+          />
+        ))}
       </div>
-      <hr/>
-      <div className="main-menu">
-        
-          {menuItems.map((menuItem, index) => (
-            <MenuItem
-              key={index}
-              name={menuItem.name}
-              exact={menuItem.exact.toString()}
-              to={menuItem.to}
-              subMenus={menuItem.subMenus || []}
-              iconClassName={menuItem.iconClassName}
-              onClick={(e) => {
-                if (inactive) {
-                  setInactive(false);
-                }
-              }}
-            />
-          ))}
-      </div>
-      
       <div className="side-menu-footer">
-        <div className="user-details-footer">
+        {!inactive && (
+          <div className="user-details-footer">
             <div className="account-label">Account</div>
-            <span className="navbar-user-label"></span><br/>
-            <span className="user-type-label"></span>
-        </div>
-        <hr/>
+            <span className="navbar-user-label">BANBAN BATUMBAKAL</span>
+            <br />
+            <span className="user-type-label">ADMINISTATOR</span>
+          </div>
+        )}
+        {/* <div className="logout-cont" onClick={removeUserSession}> */}
         <div className="logout-cont">
-          <img src={logout} className="logout-btn"/>
+          <img src={logout} className="logout-btn" />
           <span className="logout-label">LOG OUT</span>
         </div>
       </div>
