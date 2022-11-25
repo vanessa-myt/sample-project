@@ -22,7 +22,7 @@ function Login() {
 
   return (
     <div className=''>
-      <div className="container center">
+      <div className="login-container center">
         <Row className='pt-5'>
           <Col>
           <img src={logo} width={450} height={180}></img>

@@ -22,7 +22,7 @@ function Dashboard() {
             }}
             active={'MANAGE'} 
         />
-        <div className={`page-container ${inactive ? "inactive" : "active"}`}>
+        <div className={`container ${inactive ? "inactive" : "active"}`}>
         {/* First Row */}
             <Row>
                 <Col xs='6'>
