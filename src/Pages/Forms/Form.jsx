@@ -49,39 +49,28 @@ function Form() {
             </Row>
             <hr className='hr-line'/>
             <Row>
-                <Col xs='2' className='left'>
-                    <label className='forms-text'>Role: </label>
-                </Col>
                 <Col xs='5' className='left'>
-                    <select className='form-dropdown'>
-                        <option>Select</option>
-                        <option>All</option>
-                    </select>
+                    <TextField required={true} size={'sm'} formLabel={'Role:'} placeholder={'Role'}/>
                 </Col>
+                <Col xs='2' className='left'></Col>
             </Row>
             <Row>
-                <Col xs='2' className='left'>
-                    <label className='forms-text'>First Name: </label>
+            <   Col xs='5' className='left'>
+                    <TextField required={true} size={'sm'} formLabel={'First Name:'} placeholder={'First Name'}/>
                 </Col>
-                <Col xs='5' className='left'>
-                    <input type="text" className='form-input-text'></input>
-                </Col>
+                <Col xs='2' className='left'></Col>
             </Row>
             <Row>
-                <Col xs='2' className='left'>
-                    <label className='forms-text'>Last Name: </label>
+            <Col xs='5' className='left'>
+                    <TextField required={true} size={'sm'} formLabel={'Last Name:'} placeholder={'Last Name'}/>
                 </Col>
-                <Col xs='5' className='left'>
-                    <input type="text" className='form-input-text'></input>
-                </Col>
+                <Col xs='2' className='left'></Col>
             </Row>
             <Row>
-                <Col xs='2' className='left'>
-                    <label className='forms-text'>Birthdate: </label>
-                </Col>
                 <Col xs='5' className='left'>
-                    <input type="text" className='form-input-text'></input>
+                    <TextField required={true} size={'sm'} formLabel={'Birthdate:'} placeholder={'MM-DD-YYYY'}/>
                 </Col>
+                <Col xs='2' className='left'></Col>
             </Row>
             <Row>
                 <Col xs='2' className='left'>
@@ -97,12 +86,10 @@ function Form() {
                 </Col>
             </Row>
             <Row>
-                <Col xs='2' className='left'>
-                    <label className='forms-text'>Address: </label>
-                </Col>
                 <Col xs='5' className='left'>
-                    <textarea type="text" className='form-input-text'></textarea>
+                    <TextField required={true} size={'sm'} formLabel={'Address:'} placeholder={'Basak, Mandaue City, Cebu, Philippines'}/>
                 </Col>
+                <Col xs='2' className='left'></Col>
             </Row>
             <hr className='hr-line'/>
             <Row className="left">
@@ -111,13 +98,6 @@ function Form() {
                         Agree terms and conditions.
                 </label>
             </Row>
-           
-                <TextField 
-                required={true}
-                size={'sm'}
-                formLabel={'Custom Textfield'}
-                placeholder={'Test from core'}/>
-           
             <Row>
                 <Col className='right'>
                     <button className='save-btn'>SAVE</button>

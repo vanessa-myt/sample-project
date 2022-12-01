@@ -8,6 +8,8 @@ import FileUpload from './Pages/FileUpload/FileUpload';
 import Report from './Pages/Reports/Report';
 import Modal from './Pages/Modal/Modal';
 import Loaders from './Pages/Others/Loaders';
+import Charts from './Pages/Chart/Chart';
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +21,7 @@ function App() {
           <Route path="/file-upload" element={<FileUpload/>}/>        
           <Route path="/report" element={<Report/>}/>        
           <Route path="/modal" element={<Modal/>}/>
+          <Route path="/chart" element={<Charts/>}/>
 
           {/* OTHERS */}
           <Route path="/others/loaders" element={<Loaders/>}/>      

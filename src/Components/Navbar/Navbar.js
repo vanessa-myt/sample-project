@@ -9,6 +9,7 @@ import "../Navbar/Navbar.css";
 import logo from "../../Assets/Logo/MYT_nobg.png";
 import logout from "../../Assets/Navbar/logout.png";
 import dashboard from "../../Assets/Navbar/dashboard.png";
+import chart from "../../Assets/Navbar/chart.png";
 
 const Navbar = (props) => {
 
@@ -19,6 +20,12 @@ const Navbar = (props) => {
       exact: true,
       to: "/dashboard",
       iconClassName: dashboard,
+    },
+    {
+      name: "CHART",
+      exact: true,
+      to: "/chart",
+      iconClassName: chart,
     },
     // {
     //   name: "FEDEX",
