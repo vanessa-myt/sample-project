@@ -45,7 +45,7 @@
     margin-top: 20px;
 }
 
-.add-btn, .save-btn, .submit-btn{
+.add-btn, .save-btn, .submit-btn, .yes-btn{
     color:rgb(248, 244, 244);
     font-weight: bold;
     background-color: #5BC9E2;
@@ -63,4 +63,18 @@
 
 .checkbox{
     background-color: #5BC9E2;
+}
+
+@media screen and (max-width: 600px) {
+.add-btn, .save-btn, .submit-btn, .yes-btn{
+    color:rgb(248, 244, 244);
+    font-weight: bold;
+    background-color: #5BC9E2;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 2px 2px 2px;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 50% !important;
+}
 }
