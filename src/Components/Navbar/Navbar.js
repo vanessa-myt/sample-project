@@ -10,7 +10,8 @@ import logo from "../../Assets/Logo/MYT_nobg.png";
 import logout from "../../Assets/Navbar/logout.png";
 import dashboard from "../../Assets/Navbar/dashboard.png";
 import chart from "../../Assets/Navbar/chart.png";
-
+import modal from "../../Assets/Navbar/modals.png";
+import upload from "../../Assets/Navbar/fileupload.png"
 const Navbar = (props) => {
 
   //BU Head
@@ -26,6 +27,18 @@ const Navbar = (props) => {
       exact: true,
       to: "/chart",
       iconClassName: chart,
+    },
+    {
+      name: "MODALS",
+      exact: true,
+      to: "/modals",
+      iconClassName: modal,
+    },
+    { 
+    name: "UPLOADS",
+    exact: true,
+    to: "/uploads",
+    iconClassName: upload,
     },
     // {
     //   name: "FEDEX",

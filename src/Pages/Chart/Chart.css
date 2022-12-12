@@ -2,3 +2,10 @@
     width: 500px !important;
     height: 400px !important;
 }
+
+@media only screen and (width: 600px) {
+.chart-size{
+    width: 150px !important;
+    height: 100px !important;
+}
+}

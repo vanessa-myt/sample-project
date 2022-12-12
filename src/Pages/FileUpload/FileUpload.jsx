@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Row, Col } from 'react-bootstrap';
 
 //CSS
-import '../Forms/Form.css';
+import '../FileUpload/FileUpload.css';
 
 //Component
 import Navbar from "../../Components/Navbar/Navbar";
@@ -139,10 +139,10 @@ function Form() {
             }}
             active={'FILE UPLOAD'} 
         />
-        <div className={`page-container ${inactive ? "inactive" : "active"}`}>
+        <div className={`container ${inactive ? "inactive" : "active"}`}>
         {/* First Row */}
             <Row>
-                <h1 className='page-title left'>FILE UPLOAD</h1>
+                <h1 className='page-title pt-0 left'>FILE UPLOAD</h1>
             </Row>
             <hr className='hr-line'/>
             <Row>
@@ -159,7 +159,7 @@ function Form() {
                     />
                 </Col>
                 <Col xs='2 mb-4' className='left'>
-                    <button className='add-btn'>UPLOAD</button>
+                    <button className='upload-btn'>UPLOAD</button>
                 </Col>
             </Row>
             <Row>
@@ -171,12 +171,13 @@ function Form() {
                     type={"file"}
                     id={"csvFileInput"}
                     accept={".csv"}
+                    className="input-file-upload"
                     onChange={handleOnChange}
                     ref={inputRef}
                   />
                 </Col>
-                <Col xs='2' className='left mb-5'>
-                    <button className='add-btn' onClick={handleOnSubmit}>UPLOAD</button>
+                <Col xs='2' className='left mb-4'>
+                    <button className='upload-btn' onClick={handleOnSubmit}>UPLOAD</button>
                 </Col>
                 <Row>
                 <table>
@@ -214,13 +215,13 @@ function Form() {
                     />
                 </Col>
                 <Col xs='2 mb-4' className='left'>
-                    <button className='add-btn'>UPLOAD</button>
+                    <button className='upload-btn'>UPLOAD</button>
                 </Col>
-                <Row>
+                {/* <Row>
                   <Col xs='center'>
                     <img src={file} className="upload-image-icon"/>
                   </Col>
-                </Row>
+                </Row> */}
             </Row>
             </Row>
         </div>

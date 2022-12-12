@@ -56,7 +56,7 @@ function Dashboard() {
                                     <Col xs='6 left pt-2'>
                                         <label className='subtitle'>1389</label>
                                         <Row>
-                                            <label className='ms-2 text-label'>Users</label>
+                                            <label className='text-label'>Users</label>
                                         </Row>
                                     </Col>
                                 </Row>
@@ -75,7 +75,7 @@ function Dashboard() {
                                     <Col xs='6 left pt-2'>
                                         <label className='subtitle'>569</label>
                                         <Row>
-                                            <label className='ms-2 text-label'>New Orders</label>
+                                            <label className='text-label'>Orders</label>
                                         </Row>
                                     </Col>
                                 </Row>
@@ -94,7 +94,7 @@ function Dashboard() {
                                     <Col xs='6 left pt-2'>
                                         <label className='subtitle'>1000</label>
                                         <Row>
-                                            <label className='ms-2 text-label'>Income</label>
+                                            <label className='text-label'>Income</label>
                                         </Row>
                                     </Col>
                                 </Row>
@@ -113,7 +113,7 @@ function Dashboard() {
                                     <Col xs='6 left pt-2'>
                                         <label className='subtitle'>852</label>
                                         <Row>
-                                            <label className='ms-2 text-label'>Downloads</label>
+                                            <label className='text-label'>Downloads</label>
                                         </Row>
                                     </Col>
                                 </Row>

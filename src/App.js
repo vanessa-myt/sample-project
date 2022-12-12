@@ -9,6 +9,7 @@ import Report from './Pages/Reports/Report';
 import Modal from './Pages/Modal/Modal';
 import Loaders from './Pages/Others/Loaders';
 import Charts from './Pages/Chart/Chart';
+import Upload from './Pages/FileUpload/FileUpload';
 
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
           <Route path="/form" element={<Form/>}/>        
           <Route path="/file-upload" element={<FileUpload/>}/>        
           <Route path="/report" element={<Report/>}/>        
-          <Route path="/modal" element={<Modal/>}/>
+          <Route path="/modals" element={<Modal/>}/>
           <Route path="/chart" element={<Charts/>}/>
+          <Route path="/uploads" element={<Upload/>}/>
 
           {/* OTHERS */}
           <Route path="/others/loaders" element={<Loaders/>}/>      
