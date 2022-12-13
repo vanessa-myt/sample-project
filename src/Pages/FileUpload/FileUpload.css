@@ -2,3 +2,40 @@
     width: 15px !important;
     height: 10px !important;
 }
+
+.upload-btn{
+    color:rgb(248, 244, 244);
+    font-weight: bold;
+    background-color: #5BC9E2;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 2px 2px 2px;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 50% !important;
+}
+
+@media screen and (max-width: 600px) {
+.left{
+    text-align: left;
+    margin-left: 0%;
+}
+
+.upload-btn{
+    color:rgb(248, 244, 244);
+    font-weight: bold;
+    background-color: #5BC9E2;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 2px 2px 2px;
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 120% !important;
+    font-size: 70%;
+}
+
+.input-file-upload{
+    width: 100% !important;
+    font-size: 60%;
+}
+}

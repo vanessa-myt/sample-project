@@ -3,7 +3,7 @@
     border: 1px solid #a6ddf9;
     border-radius: 5px;
     box-sizing: border-box;
-    width: 50%;
+    width: 100%;
     margin-top: 2%;
     padding: 5px;
     padding-left: 5%;
@@ -33,7 +33,7 @@
 .branch-icon {
     display: inline;
     width: 2%;
-    margin-left: -5%;
+    margin-left: -15%;
     color: #e70689;
     cursor: pointer;
   }
@@ -83,15 +83,51 @@
         font-family: 'Gotham-Rounded-Bold';
         color: #255398;
         letter-spacing: 0.05em;
-        font-size: 5px;
+        font-size: 1.0rem;
         text-transform: uppercase;
+        margin-left: -30%;
       }
     
     .text-label {
         font-family: 'Gotham-Rounded-Bold';
         color: #3e6db5;
         letter-spacing: 0.05em;
-        font-size: 1rem;
+        font-size: 0.60rem;
         text-transform: uppercase;
+        margin-left: -30%;
     }
+    .page-title{
+      font-family: 'Gotham-Rounded-Bold';
+      color: #3fd3ea;
+      letter-spacing: 0.05em;
+      font-size: 1.8rem;
+    }
+    .search-input-text{
+      background: #d9f3f6;
+      border: 1px solid #a6ddf9;
+      border-radius: 5px;
+      box-sizing: border-box;
+      width: 70%;
+      margin-top: 2%;
+      padding: 5px;
+      padding-left: 5%;
+      z-index: 0;
+  }
+  .dashboard-icons{
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    }
+    .search-icon{
+      width: 20px;
+      height: 20px;
+      left: 5vw;
+  }
+  .branch-icon {
+    display: inline;
+    width: 2%;
+    margin-left: -10%;
+    color: #e70689;
+    cursor: pointer;
+  }
   }
