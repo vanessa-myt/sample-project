@@ -8,7 +8,7 @@ import warning from "../../Assets/Modal/warning.png";
 import "../../Pages/Modal/Modal.css";
 
 
-const ModalPopUp = ({type,show,handleClose}) => {
+const ModalPopUp = ({type,show,handleClose, data}) => {
   const showHideClassName = show
     ? "modal-pop display-block"
     : "modal-pop display-none";
@@ -61,6 +61,33 @@ const ModalPopUp = ({type,show,handleClose}) => {
                 <label className="label">
                   Warning! You are not allowed to continue processing.
                 </label>
+                <textarea value={data}></textarea>
+              </Row>
+              <hr className="modal-line" />
+              <div className="mt-2 right d-flex justify-content-end">
+                <button type="button" className="cancel-btn ms-0" onClick = {handleClose}>
+                    CLOSE
+                </button>
+              </div>
+            </Row>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  if (type === "Base64") {
+    return (
+      <div className={showHideClassName}>
+        <section className="modal-mains modal-reset">
+          <div className="modal-cont-header d-flex justify-content-center">
+            <div className="modal-header-label">CONVERTED</div>
+          </div>
+          <hr className="modal-line" />
+          <div className="modal-content-body">
+            <Row className="">
+              <Row className='mt-4 mb-4 center'>
+                <textarea className="text-area" value={data}></textarea>
               </Row>
               <hr className="modal-line" />
               <div className="mt-2 right d-flex justify-content-end">
