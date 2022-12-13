@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Row, Col } from 'react-bootstrap';
-
+import { numberWithCommas } from '../../Helpers/Utils/Common';
 //CSS
 import '../Forms/Form.css';
 import '../../Pages/Dashboard/Dahsboard.css';
@@ -13,12 +13,24 @@ import Table from '../../Components/Table/Table';
 
 const sampleData = [
     {employee_id:"324325", name:"Wednesday Addams", position:"Front-End Developer", salary:"100000", date_started:"12/12/2022"},
-    {employee_id:"574574", name:"Xavier Thorpe", position:"Back-End Developer", salary:"100000", date_started:"12/28/2022"}
+    {employee_id:"574574", name:"Xavier Thorpe", position:"Back-End Developer", salary:"100000", date_started:"12/28/2022", action: "delete"}
 ]
 
 function TableComponent() {
 
     const [inactive, setInactive] = useState(false);
+    const [option, setOption]= useState("Select");
+
+    function ActionBtn() {
+        return (
+            <button className='save-btn'></button>
+        //   <input type="dropdown" name="action" className="save-btn" value={option}>
+        //         <option defaulValue selected hidden>Select</option>
+        //         <option value="view-user" className="save-btn">View</option>
+        //         <option value="delete-user" className="color-red">Delete</option>
+        //   </input>
+        );
+      }
 
   return (
     <div className='page'>
@@ -43,7 +55,8 @@ function TableComponent() {
                                 "EMPLOYEE #",
                                 "NAME",
                                 "POSITION",
-                                "SALARY"
+                                "SALARY",
+                                "ACTIONs"
                             ]}
                             headerSelector={[
                                 "employee_id",
@@ -52,6 +65,7 @@ function TableComponent() {
                                 "salary"
                             ]}
                             tableData={sampleData}
+                            ActionBtn = {ActionBtn}
                             showLoader={false}
                         />
                     </div>
