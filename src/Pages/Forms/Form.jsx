@@ -27,7 +27,7 @@ function Form() {
         {/* First Row */}
             <Row>
                 <Col xs='3 pt-2'>
-                    <h1 className='page-title left'>FORM</h1>
+                    <h1 className=''>FORM</h1>
                 </Col>
                 <Col xs='5'>
                     <div className='branch-wrapper right pt-3'>

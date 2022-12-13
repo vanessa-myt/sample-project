@@ -10,6 +10,8 @@ import logo from "../../Assets/Logo/MYT_nobg.png";
 import logout from "../../Assets/Navbar/logout.png";
 import dashboard from "../../Assets/Navbar/dashboard.png";
 import chart from "../../Assets/Navbar/chart.png";
+import { Chart } from "react-chartjs-2";
+
 import modal from "../../Assets/Navbar/modals.png";
 import upload from "../../Assets/Navbar/fileupload.png"
 const Navbar = (props) => {
@@ -29,6 +31,14 @@ const Navbar = (props) => {
       iconClassName: chart,
     },
     {
+      name: "OTHERS",
+      exact: true,
+      to: "/others",
+      iconClassName: chart,
+      subMenus: [
+        { name: "Adjustments", to: "/others/loaders" },
+      ],
+      expand: true,
       name: "MODALS",
       exact: true,
       to: "/modals",
