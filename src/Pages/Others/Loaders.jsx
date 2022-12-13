@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import ReactLoading from 'react-loading';
+import Navbar from '../../Components/Navbar/Navbar';
 
 import "./Others.css"
 
@@ -32,8 +33,16 @@ const loadersList = [
   ];
 
 function Loaders() {
+  const [inactive, setInactive] = useState(true)
   return (
-    <div className='p-5'>
+    <div className='page'>
+        <Navbar
+            onCollapse={(inactive) => {
+            setInactive(inactive)
+            }}
+            active={'OTHERS'} 
+        />
+        <div className={`container ${inactive ? "inactive" : "active"}`}>
         <div className='header-label'>LOADERS</div>
         <hr/>
         <Row>
@@ -44,11 +53,6 @@ function Loaders() {
                             <Card.Header className='card-header'>{data.prop.toUpperCase()}</Card.Header>
                             <Card.Body>
                                 <ReactLoading type={data.prop} color="#5BC9E2" height={100} width={50} className="react-loader" />
-                                {/* <Card.Title>Special title treatment</Card.Title>
-                                <Card.Text>
-                                With supporting text below as a natural lead-in to additional content.
-                                </Card.Text>
-                                <Button variant="primary">Go somewhere</Button> */}
                             </Card.Body>
                         </Card>
                         
@@ -56,6 +60,7 @@ function Loaders() {
                 )
             })}
         </Row>
+        </div>
     </div>
   )
 }

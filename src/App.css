@@ -30,7 +30,7 @@ hr{
   text-align: left;
   text-transform: capitalize;
   color:var(--tertiary-color);
-  padding: 2%;
+  /* padding-left: 2% !important; */
   padding-bottom: 0%;
 }
 
