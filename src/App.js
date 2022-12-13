@@ -12,6 +12,7 @@ import Modal from './Pages/Modal/Modal';
 import Loaders from './Pages/Others/Loaders';
 import Charts from './Pages/Chart/Chart';
 import Upload from './Pages/FileUpload/FileUpload';
+import TableComponent from './Pages/Tables/TableComponent';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login/>}/>        
+          <Route path="/tables" element={<TableComponent/>}/>        
           <Route path="/dashboard" element={<Dashboard/>}/>        
           <Route path="/form" element={<Form/>}/>        
           <Route path="/file-upload" element={<FileUpload/>}/>        
