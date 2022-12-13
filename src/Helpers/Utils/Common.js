@@ -4,6 +4,7 @@ import { logoutUser } from '../API/authApi';
 /***************************
  * Common Utilities
  ***************************/
+//Number Format 100,001.00
 export const numberWithCommas = (number) => {
     if(!number) {
         return
@@ -14,37 +15,19 @@ export const numberWithCommas = (number) => {
 
 //Common Utility Functions
 
+//Refresh Page
 export const refreshPage = () => {
     window.location.reload();
 }
 
-export const getTime = (date) => {
-    return  date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
-}
+export const autoRefresh = () => {
+    window.location.reload(1);
+ };
 
-export const subtractMonths = (numOfMonths, date = new Date()) => {
-   date.setMonth(date.getMonth() - numOfMonths);
-   return date.toISOString().split('T')[0];
-}
-
-export const getTodayDate = () => {
-    return new Date();
-}
-
+//Date
 export const getTodayDateISO = () => {
     let date =  new Date();
     return date.toISOString().split('T')[0]
-}
-
-export const getAge = (dateString) => {
-    var today = new Date();
-    var birthdate = new Date(dateString);
-    var age = today.getFullYear() - birthdate.getFullYear();
-    var m = today.getMonth() - birthdate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) {
-        age--;
-    }
-    return age;
 }
 
 export const formatPrice = (p)=> {
@@ -85,6 +68,35 @@ export const formatMDY = (date) => {
     return stringDate[1] + "-" + stringDate[2] + "-" + stringDate[0]
 }
 
+//Get time 1:38 AM/PM
+export const getTime = (date) => {
+    return  date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+}
+
+//Current Date
+export const getTodayDate = () => {
+    return new Date();
+}
+
+export const subtractMonths = (numOfMonths, date = new Date()) => {
+   date.setMonth(date.getMonth() - numOfMonths);
+   return date.toISOString().split('T')[0];
+}
+
+export const getAge = (dateString) => {
+    var today = new Date();
+    var birthdate = new Date(dateString);
+    var age = today.getFullYear() - birthdate.getFullYear();
+    var m = today.getMonth() - birthdate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+/********************************************************
+ Validations(REgex Validation for Email, Contact  Number) 
+ ********************************************************/
 export const validateEmail = (email) => {
     if(email === "") {
         return true
@@ -111,11 +123,9 @@ export const formatNum = (num) => {
 
 
 
-
 /***************************
  * Local Storage Utilities
  ***************************/
-
 
 //return user data from local storage
 export const getUser = () => {
@@ -146,20 +156,6 @@ export const getRole = () => {
     else return null;
 }
 
-//return user city from local storage
-export const getCity = () => {
-    const userStr = localStorage.getItem('city');
-    if(userStr) return JSON.parse(userStr);
-    else return null;
-}
-
-//return user region from local storage
-export const getRegion = () => {
-    const userStr = localStorage.getItem('region');
-    if(userStr) return JSON.parse(userStr);
-    else return null;
-}
-
 //return role id from local storage
 export const getRoleId = () => {
     return localStorage.getItem('role_id') || null;
@@ -175,29 +171,9 @@ export const getKey = () => {
     return localStorage.getItem('api_key') || null;
 }
 
-//return current branch from local storage
-export const getBranch = () => {
-    return localStorage.getItem('branch') || null;
-}
-
-//return branch type from local storage
-export const getBranchType = () => {
-    return JSON.parse(localStorage.getItem('branch_type')) || null;
-}
-
-//return branch name from local storage
-export const getBranchName = () => {
-    return JSON.parse(localStorage.getItem('branch_name')) || null;
-}
-
 //return token expiry from local storage
 export const getTokenExpiry = () => {
     return localStorage.getItem('token_expiry') || null;
-}
-
-//return services from local storage
-export const getUserServices = () => {
-    return localStorage.getItem('services') || null;
 }
 
 //remove token from local storage

@@ -9,10 +9,17 @@ import Search from "../../Assets/Dashboard/search.png";
 import User from "../../Assets/Dashboard/user.png";
 //Component
 import Navbar from "../../Components/Navbar/Navbar";
+import { autoRefresh } from '../../Helpers/Utils/Common';
 
 function Dashboard() {
 
     const [inactive, setInactive] = useState(false);
+
+    // React.useEffect(() => {
+    //     var  x = "hello" 
+    //         autoRefresh(x,5000);
+    //         console.log("refreshed!")
+    // }, []);
 
   return (
     <div className='page'>

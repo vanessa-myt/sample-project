@@ -219,16 +219,6 @@ const ModalPopUp = ({type,show,handleClose}) => {
     );
   }
 
-  return (
-    <div className={showHideClassName}>
-      <section className="modal-main">
-        Here
-        <button type="button" onClick={handleClose}>
-          Close
-        </button>
-      </section>
-    </div>
-  );
 };
 
 export default ModalPopUp;

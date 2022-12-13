@@ -9,7 +9,7 @@ import Search from "../../Assets/Dashboard/search.png";
 
 //Component
 import Navbar from "../../Components/Navbar/Navbar";
-import Table from "../../Components/Table/Table";
+// import Table from "../../Components/Table/Table";
 function Report() {
 
     const [inactive, setInactive] = useState(false);
