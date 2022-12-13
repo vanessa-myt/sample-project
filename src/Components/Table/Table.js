@@ -79,6 +79,7 @@ export default function Table({
         </div>
     ) : (
         <DataTable
+            responsive={true}
             pagination={true}
             striped
             fixedHeader

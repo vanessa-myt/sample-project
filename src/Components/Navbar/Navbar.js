@@ -31,6 +31,12 @@ const Navbar = (props) => {
       iconClassName: dashboard,
     },
     {
+      name: "FORMS",
+      exact: true,
+      to: "/forms",
+      iconClassName: dashboard,
+    },
+    {
       name: "CHART",
       exact: true,
       to: "/chart",

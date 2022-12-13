@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Login from './Pages/Login/Login';
 import Dashboard from './Pages/Dashboard/Dashboard';
-import Form from './Pages/Forms/Form';
 import FileUpload from './Pages/FileUpload/FileUpload'; 
 import Report from './Pages/Reports/Report';
 import Modal from './Pages/Modal/Modal';
@@ -13,6 +12,7 @@ import Loaders from './Pages/Others/Loaders';
 import Charts from './Pages/Chart/Chart';
 import Upload from './Pages/FileUpload/FileUpload';
 import TableComponent from './Pages/Tables/TableComponent';
+import FormComponent from './Pages/Forms/FormComponent';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
           <Route path="/" element={<Login/>}/>        
           <Route path="/tables" element={<TableComponent/>}/>        
           <Route path="/dashboard" element={<Dashboard/>}/>        
-          <Route path="/form" element={<Form/>}/>        
+          <Route path="/forms" element={<FormComponent/>}/>        
           <Route path="/file-upload" element={<FileUpload/>}/>        
           <Route path="/report" element={<Report/>}/>        
           <Route path="/modals" element={<Modal/>}/>
