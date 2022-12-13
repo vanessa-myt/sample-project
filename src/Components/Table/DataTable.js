@@ -1,6 +1,6 @@
-import { Form } from "react-bootstrap";
+import { SyncLoader } from "react-spinners";
 import DataTable from "react-data-table-component";
-import NoDataPrompt from "./NoDataPrompt/NoDataPrompt"
+import NoDataPrompt from "../NoDataPrompt/NoDataPrompt";
 import "./Table.css";
 
 export default function Table({
@@ -8,16 +8,10 @@ export default function Table({
     headerSelector,
     tableData,
     ActionBtn,
-    ViewBtn,
     PendingBtn,
+    ViewBtn,
     showLoader,
     withActionData,
-    onRowClicked,
-    SaleBtn,
-    ContractBtn,
-    SaleBillingBtn,
-    checkBtn,
-    tableType,
 }) {
     const columns = tableHeaders.map((header, index) => {
         if (header === "-") {
@@ -26,36 +20,33 @@ export default function Table({
                 selector: (row) => row[headerSelector[index]],
                 button: true,
                 cell: ViewBtn,
-                width: "4vw",
+                width: "7vw",
                 reorder: false,
-                wordWrap: "break-word",
+            };
+        } else if (header === "*") {
+            return {
+                name: "",
+                selector: (row) => row[headerSelector[index]],
+                button: true,
+                cell: PayBtn,
+                width: "7vw",
+                reorder: false,
             };
         } else if (header === "ACTIONS" && !withActionData) {
             return {
                 name: header,
                 button: true,
                 cell: ActionBtn,
-                width: "7vw",
-                reorder: false,
-                center: true,
-            };
-        } else if (header === " ") {
-            return {
-                name: header,
-                button: true,
-                cell: PendingBtn,
-                width: "10vw",
+                width: "6vw",
                 reorder: true,
-                wordWrap: "break-word",
             };
-        }else {
+        } else {
             return {
                 name: header,
                 selector: (row) => row[headerSelector[index]],
                 sortable: true,
                 // width: "10vw",
                 reorder: true,
-                wrap: true,
             };
         }
     });
@@ -79,7 +70,7 @@ export default function Table({
         </div>
     ) : (
         <DataTable
-            pagination={true}
+            pagination
             striped
             fixedHeader
             fixedHeaderScrollHeight="50vh"
@@ -88,7 +79,6 @@ export default function Table({
             customStyles={customStyles}
             paginationComponentOptions={paginationComponentOptions}
             noDataComponent={<NoDataPrompt />}
-            defaultSortFieldId={tableType === "itemList" && 2}
         />
     );
 }

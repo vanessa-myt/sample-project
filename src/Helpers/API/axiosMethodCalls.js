@@ -30,6 +30,7 @@ export const postAPICall = (url, data) => {
 export const postAPICallwithFile = (url, data) => {
     return axios.post(url, data, fileconfig);
 }
+
 // API Axios Put Call.
 export const putAPICall = (url, data) => {
     return axios.put(url, data, config);
