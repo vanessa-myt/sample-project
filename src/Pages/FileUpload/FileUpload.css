@@ -15,6 +15,11 @@
     width: 50% !important;
 }
 
+.text-area{
+    border-color: rgb(9, 228, 235);
+    height: fit-content;
+}
+
 @media screen and (max-width: 600px) {
 .left{
     text-align: left;

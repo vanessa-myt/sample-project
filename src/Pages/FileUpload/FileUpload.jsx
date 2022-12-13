@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Row, Col } from 'react-bootstrap';
-
+import ModalPopUp from '../../Components/Modals/Modals';
 //CSS
 import '../FileUpload/FileUpload.css';
 
@@ -17,6 +17,7 @@ function Form() {
     const [array, setArray] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selected, setSelected] = useState(false);
+    const [showModalWarning, setShowModalWarning] = useState(false)
 
 
   const handleOnChange = (e) => {
@@ -65,6 +66,7 @@ function Form() {
         csvFileToArray(text);
       };
       fileReader.readAsText(file);
+      setShowModalWarning(true)
       alert.success("CONVERTED");
     }
   };
@@ -90,11 +92,15 @@ function Form() {
         base64 = fileLoadedEvent.target.result;
         setFile(base64)
         console.log(fileReader.result);
-
+        setFile(fileReader.result)
       }
       fileReader.readAsDataURL(fileToLoad)
       console.log(fileToLoad)
+      setShowModal(true)
     }
+    else {
+      setShowModal(true)
+    };
     console.log(selectedFile)
   }
 
@@ -119,14 +125,15 @@ function Form() {
       fileReader.onload = function(fileLoadedEvent){
         base64 = fileLoadedEvent.target.result;
         setFile(base64)
-        console.log(fileReader.result);
-
+        console.log(base64)
       }
       fileReader.readAsDataURL(fileToLoad)
       console.log(fileToLoad)
+      setShowModalWarning(true)
     }
     console.log(selectedFile)
   }
+  
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -209,7 +216,7 @@ function Form() {
                       type="file"                
                       id="pdftobase64"
                       name="pdftobase64" 
-                      accept="application/img"
+                      accept={".png"}
                       className="input-file-upload"
                       onChange={(e)=>convertImageToBase64(e)}
                     />
@@ -225,6 +232,18 @@ function Form() {
             </Row>
             </Row>
         </div>
+        <ModalPopUp
+            type = "Base64"
+            show = {showModalWarning}
+            handleClose = {() => setShowModalWarning(false)}
+            data = {file}
+        />
+        <ModalPopUp
+            type = "Base64"
+            show = {showModal}
+            handleClose = {() => setShowModal(false)}
+            data = {file}
+        />
     </div>
   )
 }
