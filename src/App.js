@@ -1,4 +1,6 @@
 import './App.css';
+import "./Assets/FontAwesome/index";
+import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Login from './Pages/Login/Login';

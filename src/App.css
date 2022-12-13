@@ -6,10 +6,11 @@
   --navbar-color:#F3FDFF;
 
 
-  --font-regular: 'Poppins-Regular';
-  --font-medium: 'Poppins-Medium';
-  --font-semibold: 'Poppins-Semibold';
-  --font-bold: 'Poppins-Bold';
+  --font-regular: 'Gotham-Rounded-Light';
+  --font-bold: 'Gotham-Rounded-Bold';
+  --font-medium: 'Gotham-Rounded-Medium';
+
+  --font-sublabel: 'Concert-One'
 }
 
 /* TAGS */

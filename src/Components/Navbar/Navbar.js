@@ -10,13 +10,10 @@ import logo from "../../Assets/Logo/MYT_nobg.png";
 import logout from "../../Assets/Navbar/logout.png";
 import dashboard from "../../Assets/Navbar/dashboard.png";
 import chart from "../../Assets/Navbar/chart.png";
-<<<<<<< HEAD
 import { Chart } from "react-chartjs-2";
 
-=======
 import modal from "../../Assets/Navbar/modals.png";
 import upload from "../../Assets/Navbar/fileupload.png"
->>>>>>> daae40a0e8dec9f07a23fb84d445888675d8babe
 const Navbar = (props) => {
 
   //BU Head
@@ -34,7 +31,6 @@ const Navbar = (props) => {
       iconClassName: chart,
     },
     {
-<<<<<<< HEAD
       name: "OTHERS",
       exact: true,
       to: "/others",
@@ -43,7 +39,6 @@ const Navbar = (props) => {
         { name: "Adjustments", to: "/others/loaders" },
       ],
       expand: true,
-=======
       name: "MODALS",
       exact: true,
       to: "/modals",
@@ -54,7 +49,6 @@ const Navbar = (props) => {
     exact: true,
     to: "/uploads",
     iconClassName: upload,
->>>>>>> daae40a0e8dec9f07a23fb84d445888675d8babe
     },
     // {
     //   name: "FEDEX",
