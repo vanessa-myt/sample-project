@@ -1,0 +1,22 @@
+.align-left{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.form-label{
+    /* font-weight: bold; */
+    font-family: var(--font-medium);
+}
+
+.form-check-input:checked[type=radio]{
+    background: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    box-shadow: 2px 2px 2px #c1c1c1;
+}
+
+.form-check-input:checked[type=checkbox]{
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    box-shadow: 2px 2px 2px #c1c1c1;
+}
