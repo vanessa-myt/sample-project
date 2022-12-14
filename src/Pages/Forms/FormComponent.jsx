@@ -16,6 +16,9 @@ import MYTCheckButton from '../../Components/Forms/MYTCheckButton';
 import MYTDateField from '../../Components/Forms/MYTDateField';
 import MYTTimeField from '../../Components/Forms/MYTTimeField';
 import MYTDateTimeField from '../../Components/Forms/MYTDateTimeField';
+import MYTSelect from '../../Components/Forms/MYTSelect';
+import MYTTextArea from '../../Components/Forms/MYTTextArea';
+import MYTNumberField from '../../Components/Forms/MYTNumberField';
 
 const sampleLabels = [
   {label:"Female"},
@@ -27,6 +30,12 @@ const sampleLabelsCheckbox = [
   {label:"Personal Savings"},
   {label:"Income"},
   {label:"Others"},
+]
+
+const sampleRoles = [
+    {value:1, label:"Admin"},
+    {value:2, label:"Manager"},
+    {value:3, label:"Agent"},
 ]
 
 function FormComponent() {
@@ -63,6 +72,15 @@ function FormComponent() {
                             size={`sm`}
                             placeholder={`Enter Email here`}
                         />
+                        <MYTNumberField
+                            type={`inline`}
+                            formLabel={`Mobile Number`}
+                            size={`sm`}
+                            placeholder={`09xxxxxxxxx`}
+                            sideInput
+                            sideInputType={`string`}
+                            sideInputValue={`+63`}
+                        />
                         <MYTRadioButton
                             type={`inline`}
                             formLabel={`Gender`}
@@ -87,6 +105,18 @@ function FormComponent() {
                          <MYTDateTimeField 
                             type={`inline`}
                             formLabel={`Time-In`}
+                            size={`sm`}
+                        />
+                        <MYTSelect
+                            required
+                            type={`inline`}
+                            formLabel={`Role`}
+                            size={`sm`}
+                            options={sampleRoles}
+                        />
+                         <MYTTextArea
+                            type={`inline`}
+                            formLabel={`Remarks`}
                             size={`sm`}
                         />
                     </Col>
