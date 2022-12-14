@@ -22,13 +22,10 @@ import MYTCheckButton from '../../Components/Forms/MYTCheckButton';
 import MYTDateField from '../../Components/Forms/MYTDateField';
 import MYTTimeField from '../../Components/Forms/MYTTimeField';
 import MYTDateTimeField from '../../Components/Forms/MYTDateTimeField';
-<<<<<<< HEAD
 import MYTSelect from '../../Components/Forms/MYTSelect';
 import MYTTextArea from '../../Components/Forms/MYTTextArea';
 import MYTNumberField from '../../Components/Forms/MYTNumberField';
-=======
 import ModalPopUp from '../../Components/Modals/Modals';
->>>>>>> 3fde5425bb3cce7c0d2115211874d904ddc0d62a
 
 const sampleLabels = [
   {label:"Female"},
