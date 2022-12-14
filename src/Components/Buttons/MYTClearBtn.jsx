@@ -3,10 +3,11 @@ import { Button, Col } from 'react-bootstrap'
 
 import "./Buttons.css"
 
-function MYTClearBtn({size, actionFx}) {
+function MYTClearBtn({size, obj}) { 
+
   return (
     <Col md={4} className="mb-2">
-        <Button className='action-btn clear' size={size} onClick={actionFx}>Clear</Button>
+        <Button className='action-btn clear' size={size} onClick={obj}>Clear</Button>
     </Col>
   )
 }

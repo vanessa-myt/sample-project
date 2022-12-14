@@ -32,18 +32,11 @@ export const validateUsers = (data, setIsError) => {
         handleValidationChange("fund_source", false, setIsError); 
       }
 
-      if(data.email === "" ) {
-        handleValidationChange("email", true, setIsError);
+      if(data.role === "" ) {
+        handleValidationChange("role", true, setIsError);
         isValid = false;
       } else {
-        handleValidationChange("email", false, setIsError); 
-      }
-
-      if(data.availability === "" ) {
-        handleValidationChange("availability", true, setIsError);
-        isValid = false;
-      } else {
-        handleValidationChange("availability", false, setIsError); 
+        handleValidationChange("role", false, setIsError); 
       }
 
     return isValid
