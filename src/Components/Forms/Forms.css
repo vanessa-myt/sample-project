@@ -24,3 +24,14 @@
 .css-qbdosj-Input {
     grid-area: 1/1/2/1000 !important;
 }
+
+/* input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: var(--secondary-color);
+
+    opacity: 1;
+    display: block;
+    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+} */

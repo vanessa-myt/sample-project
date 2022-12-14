@@ -65,6 +65,10 @@
     background-color: #5BC9E2;
 }
 
+.action-btn{
+    width: 100% !important;
+}
+
 @media screen and (max-width: 600px) {
 .add-btn, .save-btn, .submit-btn, .yes-btn{
     color:rgb(248, 244, 244);

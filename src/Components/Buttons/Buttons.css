@@ -1,0 +1,52 @@
+.action-btn.cancel{
+    background:#ff002b;
+    border-color: #ff002b;
+    font-family:var(--font-bold);
+}
+.action-btn.cancel:hover{
+    background:#e70027;
+    border-color: #e70027;
+    font-family:var(--font-bold);
+}
+
+.action-btn.create{
+    background:#48bfe3;
+    border-color: #48bfe3;
+    font-family:var(--font-bold);
+}
+.action-btn.create:hover{
+    background:#43afd0;
+    border-color: #43afd0;
+    font-family:var(--font-bold);
+}
+
+.action-btn.update{
+    background:#ffcc00;
+    border-color: #ffcc00;
+    font-family:var(--font-bold);
+}
+.action-btn.update:hover{
+    background:#f4c300;
+    border-color: #f4c300;
+    font-family:var(--font-bold);
+}
+
+.action-btn.clear{
+    background:white;
+    border-color: #9d4edd;
+    color: #9d4edd;
+    font-family:var(--font-bold);
+}
+.action-btn.clear:hover{
+    color:whitesmoke;
+    border-color: #9d4edd;
+    background-color: #9d4edd;
+}
+
+.action-btn.loader{
+    text-align: -webkit-center;
+}
+
+.action-btn{
+    box-shadow: 2px 2px 4px #c1c1c1;
+}
