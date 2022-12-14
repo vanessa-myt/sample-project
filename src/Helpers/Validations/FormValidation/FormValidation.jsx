@@ -1,6 +1,6 @@
 import {handleValidationChange} from '../CommonValidation';
 
-export const validateAddLoyaltyType = (data, setIsError) => {
+export const validateUsers = (data, setIsError) => {
 
     var isValid = true;
 
@@ -11,11 +11,39 @@ export const validateAddLoyaltyType = (data, setIsError) => {
       handleValidationChange("name", false, setIsError); 
     }
 
-    if(data.address === "" ) {
-        handleValidationChange("address", true, setIsError);
+    if(data.birthdate === "" ) {
+        handleValidationChange("birthdate", true, setIsError);
         isValid = false;
       } else {
-        handleValidationChange("address", false, setIsError); 
+        handleValidationChange("birthdate", false, setIsError); 
+      }
+
+      if(data.gender === "" ) {
+        handleValidationChange("gender", true, setIsError);
+        isValid = false;
+      } else {
+        handleValidationChange("gender", false, setIsError); 
+      }
+
+      if(data.fund_source === "" ) {
+        handleValidationChange("fund_source", true, setIsError);
+        isValid = false;
+      } else {
+        handleValidationChange("fund_source", false, setIsError); 
+      }
+
+      if(data.email === "" ) {
+        handleValidationChange("email", true, setIsError);
+        isValid = false;
+      } else {
+        handleValidationChange("email", false, setIsError); 
+      }
+
+      if(data.availability === "" ) {
+        handleValidationChange("availability", true, setIsError);
+        isValid = false;
+      } else {
+        handleValidationChange("availability", false, setIsError); 
       }
 
     return isValid
