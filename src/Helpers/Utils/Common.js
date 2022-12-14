@@ -15,6 +15,7 @@ export const numberWithCommas = (number) => {
 
 //Common Utility Functions
 
+
 //Refresh Page
 export const refreshPage = () => {
     window.location.reload();
