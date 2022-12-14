@@ -6,7 +6,7 @@ export class Receipt extends React.PureComponent {
       const marginTop = "10px";
       const marginRight = "10px";
       const marginBottom = "10px";
-      const marginLeft = "20px";
+      const marginLeft = "10px";
       const getPageMargins = () => {
         return `@page { margin: ${marginTop} ${marginRight} ${marginBottom} ${marginLeft} !important; }`;
       };
@@ -21,8 +21,10 @@ export class Receipt extends React.PureComponent {
                         <th className='center'>Sample Receipt</th>
                     </tr>
                 </table>
+            </Row>
+            <Row className='center'>
                 <table>
-                    <tr className='form-label'>
+                    <tr>
                         <th>Items</th>
                         <th>Qty</th>
                         <th>Amount</th>
@@ -32,6 +34,41 @@ export class Receipt extends React.PureComponent {
                         <th>2</th>
                         <th>147</th>
                     </tr>
+                    <tr >
+                        <th>Fries Large</th>
+                        <th>2</th>
+                        <th>147</th>
+                    </tr>
+                    <tr>
+                        <th>Fries Large</th>
+                        <th>2</th>
+                        <th>147</th>
+                    </tr>
+                </table>
+              </Row>
+                <hr/>
+              <Row className='center'>
+                <table>
+                  <tr>
+                    <th>SUBTOTAL</th>
+                    <th></th>
+                    <th>0.00</th>
+                  </tr>
+                  <tr>
+                    <th>TOTAL DISCOUNT</th>
+                    <th></th>
+                    <th>0.00</th>
+                  </tr>
+                  <tr>
+                    <th>VAT EXAMPTION</th>
+                    <th></th>
+                    <th>0.00</th>
+                  </tr>
+                  <tr>
+                    <th>TOTAL</th>
+                    <th>Items</th>
+                    <th>0.00</th>
+                  </tr>
                 </table>
             </Row>
           </div>
