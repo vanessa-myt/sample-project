@@ -13,6 +13,7 @@ import Charts from './Pages/Chart/Chart';
 import Upload from './Pages/FileUpload/FileUpload';
 import TableComponent from './Pages/Tables/TableComponent';
 import FormComponent from './Pages/Forms/FormComponent';
+import Geolocation from './Pages/Maps/Geolocation';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/tables" element={<TableComponent/>}/>        
           <Route path="/dashboard" element={<Dashboard/>}/>        
           <Route path="/forms" element={<FormComponent/>}/>        
+          <Route path="/maps" element={<Geolocation/>}/>        
           <Route path="/file-upload" element={<FileUpload/>}/>        
           <Route path="/report" element={<Report/>}/>        
           <Route path="/modals" element={<Modal/>}/>
