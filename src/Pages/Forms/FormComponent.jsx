@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import { Row, Col, Form } from 'react-bootstrap';
+import { Row, Col, Form, Button, DropdownButton, Dropdown, InputGroup } from 'react-bootstrap';
+
 
 //VALIDATIONS
 import { validateUsers } from '../../Helpers/Validations/FormValidation/FormValidation';
@@ -26,6 +27,13 @@ import MYTSelect from '../../Components/Forms/MYTSelect';
 import MYTTextArea from '../../Components/Forms/MYTTextArea';
 import MYTNumberField from '../../Components/Forms/MYTNumberField';
 import ModalPopUp from '../../Components/Modals/Modals';
+import MYTCancelBtn from '../../Components/Buttons/MYTCancelBtn';
+import MYTClearBtn from '../../Components/Buttons/MYTClearBtn';
+import MYTCreateBtn from '../../Components/Buttons/MYTCreateBtn';
+import MYTUpdateBtn from '../../Components/Buttons/MYTUpdateBtn';
+import MYTButtonSelect from '../../Components/Buttons/MYTButtonSelect';
+
+
 
 const sampleLabels = [
   {label:"Female"},
@@ -186,6 +194,15 @@ function FormComponent() {
                             size={`sm`}
                         />
                     </Col>
+                    {/* <Col md={4}>
+                        <Row>
+                        <MYTCancelBtn/>
+                        <MYTCreateBtn/>
+                        <MYTClearBtn/>
+                        <MYTUpdateBtn/>
+                        </Row>
+                        
+                    </Col> */}
 
                     {/* <Col md={6}>
                         <MYTTextField 
@@ -210,8 +227,16 @@ function FormComponent() {
                     </Col> */}
                    
                </Row>
-               <Row>
-                    <button className='save-btn' onClick={create}>ADD</button>
+               <Row className='justify-content-center mt-5'>
+                <Col>
+                    <MYTCancelBtn size={`sm`}/>
+                </Col>
+                <Col>
+                    <Row className='justify-content-end'>
+                        <MYTClearBtn size={`sm`}/>
+                        <MYTCreateBtn size={`sm`} actionFx={create}/>
+                    </Row>
+                </Col>
                </Row>
             </div>
             <ModalPopUp
