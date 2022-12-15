@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuItem from "./MenuItem";
-
+import { removeUserSession } from "../../Helpers/Utils/Common";
+import { useNavigate } from "react-router-dom";
 //css
 import "../Navbar/Navbar.css";
 
@@ -148,6 +149,12 @@ const Navbar = (props) => {
     });
   }, []);
 
+  const navigateto = useNavigate()
+  const handleLogout= (e) => {
+    removeUserSession()
+    navigateto("/")
+  }
+
   return (
     <div className={`side-menu ${inactive ? "inactive" : ""}`}>
       <div className="top-section">
@@ -210,7 +217,7 @@ const Navbar = (props) => {
           </div>
         )}
         {/* <div className="logout-cont" onClick={removeUserSession}> */}
-        <div className="logout-cont">
+        <div className="logout-cont" onClick={() => handleLogout()}>
           <img src={logout} className="logout-btn" />
           <span className="logout-label">LOG OUT</span>
         </div>

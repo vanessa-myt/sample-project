@@ -34,8 +34,7 @@ import MYTCreateBtn from '../../Components/Buttons/MYTCreateBtn';
 import MYTUpdateBtn from '../../Components/Buttons/MYTUpdateBtn';
 import MYTButtonSelect from '../../Components/Buttons/MYTButtonSelect';
 
-import Receipt from '../Receipt/Receipt';
-
+import Receipt from '../../Components/Receipt/Receipt';
 const sampleLabels = [
   {label:"Female"},
   {label:"Male"},
