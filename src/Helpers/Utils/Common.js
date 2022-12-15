@@ -180,6 +180,14 @@ export const getTokenExpiry = () => {
 //remove token from local storage
 export const removeUserSession = () => {
     logoutUser();
+    localStorage.removeItem("branch");
+  localStorage.removeItem("city");
+  localStorage.removeItem("api_key");
+  localStorage.removeItem("region");
+  localStorage.removeItem("branch_type");
+  localStorage.removeItem("services");
+  localStorage.removeItem("type");
+  localStorage.removeItem("_expiredTime");
 }
 
 //set the token and user from local storage

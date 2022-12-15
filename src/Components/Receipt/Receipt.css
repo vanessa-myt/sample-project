@@ -1,0 +1,112 @@
+.print-area {
+    /* margin: 5%; */
+    font-family: monospace !important;
+    font-size: 10px;
+}
+
+/* .ml-5{ */
+    /* margin-left: 5%; */
+/* } */
+
+.print-tix {
+    /* width: 200px; */
+    height: 7vh;
+    position: relative;
+}
+
+.print-tix img {
+    position: absolute;
+    left: 1%;
+}
+
+.align-right{
+    text-align: right !important;
+}
+
+.reading-report {
+    width: 30%;
+}
+
+.align-center{
+    text-align: center !important;
+}
+
+.dotted{
+    border-style: dotted;
+}
+
+.pl-0{
+    padding-left: 0% !important;
+}
+
+.ml-0{
+    margin-left: 0% !important;
+}
+
+.single-width {
+    max-width: 100%;
+}
+
+.logo-picture {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.logo-picture-2 {
+    display: flex !important;
+    justify-content: center !important;
+    width: 50%;
+}
+
+.text-line {
+    font-size: 20px;
+}
+
+.dotted-line {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+.dotted-line:after {
+  content: "-------------------------------------------------------------------------------------------------";
+  letter-spacing: 2px;
+  font-size: 10px;
+  color: #9cbfdb;
+  display: inline-block;
+  vertical-align: 3px;
+}
+
+.dotted-line-2 {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  max-width: 300px;
+}
+.dotted-line-2:after {
+  content: "-------------------------------------------------------------------------------------------------";
+  letter-spacing: 2px;
+  font-size: 10px;
+  color: #9cbfdb;
+  display: inline-block;
+  vertical-align: 3px;
+}
+
+.dotted-line-input {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+.dotted-line-input:after {
+  content: ":------------------------------------------------------------------------------------------------";
+  letter-spacing: 2px;
+  font-size: 10px;
+  color: #9cbfdb;
+  display: inline-block;
+  vertical-align: 3px;
+}
+
+.print-text{
+    font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* justify-content: center !important; */
+}
