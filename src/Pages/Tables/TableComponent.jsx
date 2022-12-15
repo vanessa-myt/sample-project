@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Row, Col } from 'react-bootstrap';
-import { numberWithCommas } from '../../Helpers/Utils/Common';
+import { formatDateWithTime, formatMDY, numberWithCommas } from '../../Helpers/Utils/Common';
 //CSS
 import '../Forms/Form.css';
 import '../../Pages/Dashboard/Dahsboard.css';
@@ -10,6 +10,8 @@ import User from "../../Assets/Dashboard/user.png";
 //Component
 import Navbar from "../../Components/Navbar/Navbar";
 import Table from '../../Components/Table/Table';
+import ExportPDF from '../../Components/Exports/ExportPDF';
+import ExportCSV from '../../Components/Exports/ExportCSV';
 
 const sampleData = [
     {employee_id:"324325", name:"Wednesday Addams", position:"Front-End Developer", salary:"100000", date_started:"12/12/2022"},
@@ -42,8 +44,22 @@ function TableComponent() {
         />
         <div className={`container ${inactive ? "inactive" : "active"}`}>
             <Row>
-                <Col xs='6'>
+                <Col xs='6' className='mt-3'>
                     <h1 className='page-title left'>TABLES</h1>
+                </Col>
+                <Col xs='6' className='align-right' style={{textAlign:'right'}}>
+                <ExportPDF 
+                    type={''}
+                    name={'EmployeeListPDF'}
+                    data = {sampleData}
+                    header = {Object.keys(sampleData[0])} 
+                />
+                <br/>
+                <ExportCSV 
+                    name={'EmployeeListCSV'}
+                    data = {sampleData}
+                    headers = {Object.keys(sampleData[0])} 
+                />
                 </Col>
             </Row>
             <hr className='hr-line'/>

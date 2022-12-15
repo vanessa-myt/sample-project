@@ -39,3 +39,7 @@ export const putAPICall = (url, data) => {
 export const deleteAPICall = (url) => {
     return axios.delete(url,config);
 }
+
+export const getAPICallGoogle = (url) => {
+    return axios.get(url);
+}

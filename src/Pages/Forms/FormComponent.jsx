@@ -250,7 +250,7 @@ function FormComponent() {
                </Row>
                <Row className='justify-content-center mt-5'>
                 <Col>
-                <button onClick={handlePrintReport}>print</button>
+                {/* <button onClick={handlePrintReport}>print</button> */}
                     <MYTCancelBtn size={`sm`}/>
                 </Col>
                 <Col>
