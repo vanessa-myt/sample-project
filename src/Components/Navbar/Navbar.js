@@ -14,6 +14,12 @@ import { Chart } from "react-chartjs-2";
 
 import modal from "../../Assets/Navbar/modals.png";
 import upload from "../../Assets/Navbar/fileupload.png"
+import tables from "../../Assets/Images/Menus/tables.png"
+import test from "../../Assets/Images/Menus/test.png"
+import map from "../../Assets/Images/Menus/map.png"
+
+// ATTRIBUTES
+{/* <a href="https://www.flaticon.com/free-icons/table" title="table icons">Table icons created by Cursor Creative - Flaticon</a> */}
 const Navbar = (props) => {
 
   //BU Head
@@ -28,19 +34,19 @@ const Navbar = (props) => {
       name: "TABLES",
       exact: true,
       to: "/tables",
-      iconClassName: dashboard,
+      iconClassName: tables,
     },
     {
       name: "FORMS",
       exact: true,
       to: "/forms",
-      iconClassName: dashboard,
+      iconClassName: test,
     },
     {
       name: "MAPS",
       exact: true,
       to: "/maps",
-      iconClassName: dashboard,
+      iconClassName: map,
     },
     {
       name: "CHART",
@@ -48,20 +54,20 @@ const Navbar = (props) => {
       to: "/chart",
       iconClassName: chart,
     },
-    {
-      name: "OTHERS",
-      exact: true,
-      to: "/others",
-      iconClassName: chart,
-      subMenus: [
-        { name: "Adjustments", to: "/others/loaders" },
-      ],
-      expand: true,
-      name: "MODALS",
-      exact: true,
-      to: "/modals",
-      iconClassName: modal,
-    },
+    // {
+    //   name: "OTHERS",
+    //   exact: true,
+    //   to: "/others",
+    //   iconClassName: chart,
+    //   subMenus: [
+    //     { name: "Adjustments", to: "/others/loaders" },
+    //   ],
+    //   expand: true,
+    //   name: "MODALS",
+    //   exact: true,
+    //   to: "/modals",
+    //   iconClassName: modal,
+    // },
     { 
     name: "UPLOADS",
     exact: true,

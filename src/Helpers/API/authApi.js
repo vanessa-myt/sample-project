@@ -5,11 +5,12 @@ import {getUser, getKey, getToken, refreshPage } from '../Utils/Common';
  * LOGIN
  ***************************/
 
- export const loginUser = async (username,password) => {
+ export const loginUser = async (username,password,branchcode) => {
     try {
         const response = await postAPICall(process.env.REACT_APP_LINK + 'login', {
             username: username,
             password: password,
+            branch_code:branchcode
         });
         return ({data:response.data});   
     } catch (error) {

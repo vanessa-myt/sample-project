@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+import { Col, Row } from "react-bootstrap";
 import ReactDOM from "react-dom";
 import {
   withScriptjs,
@@ -6,6 +8,7 @@ import {
   GoogleMap,
   Marker
 } from "react-google-maps";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => {
@@ -22,14 +25,34 @@ const MyMapComponent = withScriptjs(
 );
 
 export default function Geolocation() {
+  const [inactive, setInactive] = useState(true)
   return (
+    <div className='page'>
+    <Navbar
+        onCollapse={(inactive) => {
+        setInactive(inactive)
+        }}
+        active={'MAPS'} 
+    />
+    <div className={`container ${inactive ? "inactive" : "active"}`}>
+    {/* First Row */}
+        <Row>
+            <Col xs='6'>
+                <h1 className='page-title left'>GOOGLE MAPS</h1>
+            </Col>
+            
+           
+        </Row>
+        <hr className='hr-line'/>
     <div className="App">
       <MyMapComponent
         googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHeix3Mf1YRppXp1hxArkPwkevOZFc1Ew&v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `100vh` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
+        loadingElement={<div style={{ height: `80%` }} />}
+        containerElement={<div style={{ height: `95vh` }} />}
+        mapElement={<div style={{ height: `80%` }} />}
       />
+    </div>
+    </div>
     </div>
   );
 }
