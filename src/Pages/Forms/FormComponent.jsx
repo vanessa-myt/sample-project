@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import { Row, Col, Form, Button, DropdownButton, Dropdown, InputGroup } from 'react-bootstrap';
+import { useReactToPrint } from 'react-to-print';
 
 
 //VALIDATIONS
@@ -33,7 +34,7 @@ import MYTCreateBtn from '../../Components/Buttons/MYTCreateBtn';
 import MYTUpdateBtn from '../../Components/Buttons/MYTUpdateBtn';
 import MYTButtonSelect from '../../Components/Buttons/MYTButtonSelect';
 
-
+import Receipt from '../Receipt/Receipt';
 
 const sampleLabels = [
   {label:"Female"},
@@ -65,6 +66,7 @@ function FormComponent() {
         birthdate: "",
         gender: " ",
         fund_source: "",
+        role: "",
     })
     
     //REQUIRED ERROR HANDLING
@@ -73,7 +75,18 @@ function FormComponent() {
         birthdate: false,
         gender: false,
         fund_source: false,
+        role: false,
       });
+
+      const handleClear=()=>{
+        Object.keys(addUser).forEach(key => {
+            addUser[key] = "";
+          });
+        setAddUser({...addUser, name:"name"})
+        // setSearchInput("")
+        // setSingleSelections([])
+    } 
+
 
     //EDIT or UPDATE USER
     const handleAddChange = (e) => {
@@ -103,6 +116,12 @@ function FormComponent() {
         }
       }
 
+      const componentRefSummary = useRef()
+        const handlePrintReport = useReactToPrint({
+        content: () => componentRefSummary.current,
+        pageStyle: () => '@page { size: letter; margin: 5mm; }',
+    })
+
     return (
         <div className='page'>
             <Navbar
@@ -118,10 +137,11 @@ function FormComponent() {
                     </Col>
                 </Row>
                 <hr className='hr-line'/>
-                <Row>
+                <Row id="form_id">
                     <Col md={8} className="mt-2">
                         <MYTTextField 
                             required
+                            id="name"
                             type={`inline`}
                             formLabel={`Name`}
                             size={`sm`}
@@ -188,6 +208,7 @@ function FormComponent() {
                             size={`sm`}
                             options={sampleRoles}
                         />
+                        <InputError  isValid={isError.role} message={"Input is Required"}/>
                          <MYTTextArea
                             type={`inline`}
                             formLabel={`Remarks`}
@@ -229,11 +250,12 @@ function FormComponent() {
                </Row>
                <Row className='justify-content-center mt-5'>
                 <Col>
+                <button onClick={handlePrintReport}>print</button>
                     <MYTCancelBtn size={`sm`}/>
                 </Col>
                 <Col>
                     <Row className='justify-content-end'>
-                        <MYTClearBtn size={`sm`}/>
+                        <MYTClearBtn size={`sm`} obj={handleClear}/>
                         <MYTCreateBtn size={`sm`} actionFx={create}/>
                     </Row>
                 </Col>
@@ -244,6 +266,12 @@ function FormComponent() {
                 show = {showModalView}
                 handleClose = {() => setShowModalView(false)}
             />
+            <div style={{ display: 'none' }}>
+                <Receipt
+                    ref={componentRefSummary}
+                    name={"Sample Receipt"}
+                />
+            </div>
         </div>
       )
 
