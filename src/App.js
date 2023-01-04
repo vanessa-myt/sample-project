@@ -9,6 +9,7 @@ import FileUpload from './Pages/FileUpload/FileUpload';
 import Report from './Pages/Reports/Report';
 import Modal from './Pages/Modal/Modal';
 import Loaders from './Pages/Others/Loaders';
+import SignatureCanvasComponent from './Pages/Others/SignatureCanvasComponent';
 import Charts from './Pages/Chart/Chart';
 import Upload from './Pages/FileUpload/FileUpload';
 import TableComponent from './Pages/Tables/TableComponent';
@@ -32,7 +33,9 @@ function App() {
           <Route path="/uploads" element={<Upload/>}/>
 
           {/* OTHERS */}
-          <Route path="/others/loaders" element={<Loaders/>}/>      
+          <Route path="/others/loaders" element={<Loaders/>}/>  
+          <Route path="/others/signature-canvas" element={<SignatureCanvasComponent/>}/>  
+
         </Routes>
       </Router>
     </div>

@@ -75,6 +75,12 @@ const Navbar = (props) => {
     to: "/uploads",
     iconClassName: upload,
     },
+    { 
+    name: "SIGNATURE CANVAS",
+    exact: true,
+    to: "/others/signature-canvas",
+    iconClassName: upload,
+    },
     // {
     //   name: "FEDEX",
     //   exact: true,

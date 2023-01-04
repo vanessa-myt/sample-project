@@ -66,6 +66,7 @@ function error(err) {
 }
 
 function showPosition(position) {
+  fetchLocation(position.coords.latitude, position.coords.longitude)
   var copy = {...defaultProps}
   copy['center']['lat'] = position.coords.latitude
   copy['center']['lng'] = position.coords.longitude
@@ -75,7 +76,7 @@ function showPosition(position) {
   logDetails["latitude"] = position.coords.latitude
   logDetails["longitude"] = position.coords.longitude
 
-  fetchLocation()
+ 
 }
 
 function onMarkerDragEnd(coord){
@@ -105,8 +106,8 @@ geocoder.geocode({
 });
 }
 
-async function fetchLocation(){
-  const response = await getLocationOnLoad(logDetails["latitude"], logDetails["longitude"])
+async function fetchLocation(lat,lng){
+  const response = await getLocationOnLoad(lat, lng)
   if(response.data){
     logDetails["address"] = response.data.results[0].formatted_address
   }
