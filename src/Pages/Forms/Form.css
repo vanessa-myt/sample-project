@@ -1,84 +1,90 @@
-.left{
-    text-align: left;
+.left {
+  text-align: left;
 }
 
-.center{
-    text-align: center;
+.center {
+  text-align: center;
 }
 
-.right{
-    text-align: right;
+.right {
+  text-align: right;
 }
 
-.hr-line{
-    color: #0c76df;
+.hr-line {
+  color: #0c76df;
 }
 
-.forms-text{
-    font-size: 15px;
+.forms-text {
+  font-size: 15px;
 }
 
-.form-dropdown{
-    box-sizing: border-box;
-    background: #FFFFFF;
-    border: 1px solid #4B4B4B;
-    border-radius: 5px;
-    padding: 3px;
-    width: 50%;
-    margin-bottom: 10px;
+.form-dropdown {
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #4b4b4b;
+  border-radius: 5px;
+  padding: 3px;
+  width: 50%;
+  margin-bottom: 10px;
 }
 
-.form-input-text{
-    border: 1px solid #4B4B4B;
-    border-radius: 5px;
-    width: 50%;
-    height: 75%;
-    padding:0.5rem;
+.form-input-text {
+  border: 1px solid #4b4b4b;
+  border-radius: 5px;
+  width: 50%;
+  height: 75%;
+  padding: 0.5rem;
 }
 
-.form-input-upload{
-    border: 1px solid #4B4B4B;
-    border-radius: 5px;
-    width: 100%;
-    height: 70%;
-    padding:0.5rem;
-    margin-top: 20px;
+.form-input-upload {
+  border: 1px solid #4b4b4b;
+  border-radius: 5px;
+  width: 100%;
+  height: 70%;
+  padding: 0.5rem;
+  margin-top: 20px;
 }
 
-.add-btn, .save-btn, .submit-btn, .yes-btn{
-    color:rgb(248, 244, 244);
-    font-weight: bold;
-    background-color: #5BC9E2;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px 10px 20px;
-    margin-top: 20px;
+.add-btn,
+.save-btn,
+.submit-btn,
+.yes-btn {
+  color: rgb(248, 244, 244);
+  font-weight: bold;
+  background-color: #5bc9e2;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  margin-top: 20px;
 }
 
-.date-search-area{
-    caret-color: #5BC9E2;
-    color: rgb(40, 243, 236);
-    border-radius: 5px;
+.date-search-area {
+  caret-color: #5bc9e2;
+  color: rgb(40, 243, 236);
+  border-radius: 5px;
 }
 
-.checkbox{
-    background-color: #5BC9E2;
+.checkbox {
+  background-color: #5bc9e2;
 }
 
-.action-btn{
-    width: 100% !important;
+.action-btn {
+  width: 100% !important;
 }
 
 @media screen and (max-width: 600px) {
-.add-btn, .save-btn, .submit-btn, .yes-btn{
-    color:rgb(248, 244, 244);
+  .add-btn,
+  .save-btn,
+  .submit-btn,
+  .yes-btn {
+    color: rgb(248, 244, 244);
     font-weight: bold;
-    background-color: #5BC9E2;
+    background-color: #5bc9e2;
     border: none;
     border-radius: 5px;
     padding: 2px 2px 2px 2px;
     margin-top: 20px;
     margin-left: 10px;
     width: 50% !important;
-}
+  }
 }

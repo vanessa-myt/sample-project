@@ -1,15 +1,16 @@
-import React from 'react'
-import { Button, Col } from 'react-bootstrap'
+import React from "react";
+import { Button, Col } from "react-bootstrap";
 
-import "./Buttons.css"
+import "./Buttons.css";
 
-function MYTClearBtn({size, obj}) { 
-
+function MYTClearBtn({ size, obj }) {
   return (
-    <Col md={4} className="mb-2">
-        <Button className='action-btn clear' size={size} onClick={obj}>Clear</Button>
-    </Col>
-  )
+    <div className="mb-2">
+      <Button className="action-btn clear" size={size} onClick={obj}>
+        Clear
+      </Button>
+    </div>
+  );
 }
 
-export default MYTClearBtn
+export default MYTClearBtn;
