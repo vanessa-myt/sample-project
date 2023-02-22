@@ -4,7 +4,7 @@ import ReactLoading from "react-loading";
 
 import "./Buttons.css";
 
-function MYTCreateBtn({ size, actionFx, isClicked }) {
+function MYTCreateBtn({ size, onClick, isClicked }) {
   return (
     <div className="mb-2">
       {isClicked ? (
@@ -12,7 +12,7 @@ function MYTCreateBtn({ size, actionFx, isClicked }) {
           <ReactLoading type={"balls"} height={20} width={25} color="#fff" />
         </Button>
       ) : (
-        <Button className="action-btn create" size={size} onClick={actionFx}>
+        <Button className="action-btn create" size={size} onClick={onClick}>
           Save
         </Button>
       )}

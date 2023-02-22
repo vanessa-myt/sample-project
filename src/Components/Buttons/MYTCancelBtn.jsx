@@ -4,7 +4,7 @@ import ReactLoading from "react-loading";
 
 import "./Buttons.css";
 
-function MYTCancelBtn({ size, actionFx, isClicked }) {
+function MYTCancelBtn({ size, onClick, isClicked }) {
   return (
     <div className="mb-2">
       {isClicked ? (
@@ -12,7 +12,7 @@ function MYTCancelBtn({ size, actionFx, isClicked }) {
           <ReactLoading type={"balls"} height={20} width={25} color="#fff" />
         </Button>
       ) : (
-        <Button className="action-btn cancel" size={size} onClick={actionFx}>
+        <Button className="action-btn cancel" size={size} onClick={onClick}>
           Cancel
         </Button>
       )}

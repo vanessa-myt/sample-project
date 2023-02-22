@@ -99,6 +99,7 @@ function FormComponent() {
       ...prevState,
       [name]: value,
     }));
+    console.log(name, value);
   };
 
   //Create API Discount
@@ -151,6 +152,7 @@ function FormComponent() {
               size={`sm`}
               placeholder={`Enter Name`}
               onChange={(e) => handleAddChange(e)}
+              name="name"
             />
             <InputError isValid={isError.name} message={"Input is Required"} />
             <MYTTextField
@@ -266,7 +268,7 @@ function FormComponent() {
             <MYTClearBtn size={`sm`} obj={handleClear} />
           </Col>
           <Col xs={10} sm={3}>
-            <MYTCreateBtn size={`sm`} actionFx={create} />
+            <MYTCreateBtn size={`sm`} onClick={create} />
           </Col>
         </Row>
       </div>
