@@ -1,7 +1,7 @@
 // ------SAMPLE CALLS------
 
 import { getBranch, getKey, getToken, getUser } from "../Utils/Common";
-import { getAPICall, postAPICallwithFile, putAPICall } from "./axiosMethodCalls";
+import { getAPICall, postAPICallwithFile, putAPICall , postAPICall} from "./axiosMethodCalls";
 
 
 //POST API -- append a new data to the db
