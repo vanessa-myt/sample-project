@@ -7,7 +7,7 @@ import {
 } from "../../Helpers/Utils/Common";
 //CSS
 import "../Forms/Form.css";
-import "../../Pages/Dashboard/Dahsboard.css";
+import "../../Pages/Dashboard/Dashboard.css";
 //Images
 import Search from "../../Assets/Dashboard/search.png";
 import User from "../../Assets/Dashboard/user.png";

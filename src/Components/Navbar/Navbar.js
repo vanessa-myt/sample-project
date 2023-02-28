@@ -14,15 +14,16 @@ import chart from "../../Assets/Navbar/chart.png";
 import { Chart } from "react-chartjs-2";
 
 import modal from "../../Assets/Navbar/modals.png";
-import upload from "../../Assets/Navbar/fileupload.png"
-import tables from "../../Assets/Images/Menus/tables.png"
-import test from "../../Assets/Images/Menus/test.png"
-import map from "../../Assets/Images/Menus/map.png"
+import upload from "../../Assets/Navbar/fileupload.png";
+import tables from "../../Assets/Images/Menus/tables.png";
+import test from "../../Assets/Images/Menus/test.png";
+import map from "../../Assets/Images/Menus/map.png";
 
 // ATTRIBUTES
-{/* <a href="https://www.flaticon.com/free-icons/table" title="table icons">Table icons created by Cursor Creative - Flaticon</a> */}
+{
+  /* <a href="https://www.flaticon.com/free-icons/table" title="table icons">Table icons created by Cursor Creative - Flaticon</a> */
+}
 const Navbar = (props) => {
-
   //BU Head
   const buHeadItems = [
     {
@@ -43,12 +44,12 @@ const Navbar = (props) => {
       to: "/forms",
       iconClassName: test,
     },
-    {
-      name: "MAPS",
-      exact: true,
-      to: "/maps",
-      iconClassName: map,
-    },
+    // {
+    //   name: "MAPS",
+    //   exact: true,
+    //   to: "/maps",
+    //   iconClassName: map,
+    // },
     {
       name: "CHART",
       exact: true,
@@ -69,17 +70,17 @@ const Navbar = (props) => {
     //   to: "/modals",
     //   iconClassName: modal,
     // },
-    { 
-    name: "UPLOADS",
-    exact: true,
-    to: "/uploads",
-    iconClassName: upload,
+    {
+      name: "UPLOADS",
+      exact: true,
+      to: "/uploads",
+      iconClassName: upload,
     },
-    { 
-    name: "SIGNATURE CANVAS",
-    exact: true,
-    to: "/others/signature-canvas",
-    iconClassName: upload,
+    {
+      name: "SIGNATURE CANVAS",
+      exact: true,
+      to: "/others/signature-canvas",
+      iconClassName: upload,
     },
     // {
     //   name: "FEDEX",
@@ -98,7 +99,6 @@ const Navbar = (props) => {
     //   ],
     //   expand: true,
     // },
-    
   ];
 
   const [inactive, setInactive] = useState(true);
@@ -155,11 +155,11 @@ const Navbar = (props) => {
     });
   }, []);
 
-  const navigateto = useNavigate()
-  const handleLogout= (e) => {
-    removeUserSession()
-    navigateto("/")
-  }
+  const navigateto = useNavigate();
+  const handleLogout = (e) => {
+    removeUserSession();
+    navigateto("/");
+  };
 
   return (
     <div className={`side-menu ${inactive ? "inactive" : ""}`}>
